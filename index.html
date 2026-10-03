@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none';
+  script-src 'unsafe-inline';
+  style-src 'unsafe-inline' https://fonts.googleapis.com;
+  font-src https://fonts.gstatic.com;
+  img-src 'self' data: blob:;
+  connect-src 'self';
+  manifest-src 'self';
+  base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Workflow &amp; Content</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@500;600;700&display=swap">
+<style>
+:root{
+  --bg:#FBFAF7;
+  --bg-2:#F1EEE7;
+  --surface:#FFFFFF;
+  --ink:#1D2436;
+  --ink-2:#57607A;
+  --ink-3:#8D93A8;
+  --line:#E3E1DA;
+  --primary:#3C5A8A;
+  --primary-ink:#FFFFFF;
+  --primary-soft:#E8ECF5;
+  --accent:#C7D0EA;
+  --deep:#1B2740;
+  --on-deep:#E9ECF4;
+  --deep-accent:#A9B7DE;
+  --sans:"Noto Sans JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  --en:"Inter","Helvetica Neue",Arial,sans-serif;
+  --max:1160px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10141F;--bg-2:#161B27;--surface:#1A2030;--ink:#E7E9F0;--ink-2:#A6ACC0;--ink-3:#767E96;
+    --line:#2A3145;--primary:#8FA8DE;--primary-ink:#10141F;--primary-soft:#212B44;--accent:#4A5A8A;--deep:#0D1220;--on-deep:#E7E9F0;--deep-accent:#93A6D6;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10141F;--bg-2:#161B27;--surface:#1A2030;--ink:#E7E9F0;--ink-2:#A6ACC0;--ink-3:#767E96;
+  --line:#2A3145;--primary:#8FA8DE;--primary-ink:#10141F;--primary-soft:#212B44;--accent:#4A5A8A;--deep:#0D1220;--on-deep:#E7E9F0;--deep-accent:#93A6D6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.85;letter-spacing:.03em;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2,h3{font-weight:700;text-wrap:balance;margin:0;letter-spacing:.04em}
+.label{display:flex;align-items:center;gap:12px;font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--primary)}
+.label::before{content:"";width:24px;height:2px;background:var(--primary)}
+.label .num{color:var(--ink-3);font-variant-numeric:tabular-nums}
+
+/* header */
+.site-head{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--en);font-weight:700;font-size:15px;letter-spacing:.06em}
+.logo i{width:20px;height:20px;border:2px solid var(--primary);border-radius:3px;background:linear-gradient(var(--primary),var(--primary)) right 2px bottom 2px/8px 8px no-repeat}
+.nav{display:flex;gap:32px;font-size:13px;font-weight:500}
+.nav a{color:var(--ink-2);transition:color .2s}
+.nav a:hover{color:var(--primary)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:46px;padding:0 24px;border:1px solid var(--primary);color:var(--primary);font-size:14px;font-weight:500;border-radius:4px;transition:background .2s,color .2s}
+.btn:hover{background:var(--primary);color:var(--primary-ink)}
+.btn.solid{background:var(--primary);color:var(--primary-ink)}
+.btn.solid:hover{filter:brightness(1.12)}
+.btn .arr{font-family:var(--en);transition:transform .2s}
+.btn:hover .arr{transform:translateX(3px)}
+@media (max-width:820px){.nav{display:none}.site-head .btn{height:40px;padding:0 16px;font-size:13px}}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(56px,8vw,112px)}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.5;-webkit-mask-image:linear-gradient(90deg,transparent 30%,#000);mask-image:linear-gradient(90deg,transparent 30%,#000);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center}
+.hero h1{font-size:clamp(28px,3.6vw,48px);line-height:1.45;margin-top:24px}
+.hero h1 .ph{display:inline-block}
+.hero h1 em{font-style:normal;color:var(--primary)}
+.hero-lead{margin-top:24px;max-width:34em;color:var(--ink-2);font-size:16px}
+.hero-actions{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px}
+.hero-visual{max-width:320px;margin-inline:auto}
+.hero-visual svg{width:100%;height:auto;display:block}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-visual{max-width:240px}}
+
+/* strengths row */
+.strengths-row{padding-block:clamp(32px,5vw,56px)}
+.sr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.sr-item{display:grid;grid-template-columns:32px 1fr;gap:10px;padding-top:20px;border-top:2px solid var(--accent)}
+.sr-item .n{font-family:var(--en);font-weight:700;font-size:13px;color:var(--primary);padding-top:2px}
+.sr-item b{display:block;font-size:15px}
+.sr-item span{display:block;font-size:13px;color:var(--ink-2);line-height:1.7;margin-top:4px}
+@media (max-width:860px){.sr-grid{grid-template-columns:1fr;gap:24px}}
+
+/* figures */
+.band{background:var(--deep);color:var(--on-deep)}
+.band .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.fig{padding:36px 24px;border-left:1px solid rgba(255,255,255,.12)}
+.fig:first-child{border-left:0;padding-left:0}
+.fig .n{font-family:var(--en);font-weight:700;font-size:clamp(34px,3.6vw,46px);line-height:1;font-variant-numeric:tabular-nums}
+.fig .n small{font-family:var(--sans);font-weight:500;font-size:14px;margin-left:4px;opacity:.75}
+.fig .l{margin-top:12px;font-size:13px;opacity:.72}
+.band-note{grid-column:1/-1;font-size:11px;opacity:.5;padding-bottom:16px;margin-top:-12px}
+@media (max-width:760px){.band .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.fig{padding:26px 16px}.fig:nth-child(odd){border-left:0;padding-left:0}.fig:nth-child(n+3){border-top:1px solid rgba(255,255,255,.12)}.band-note{margin-top:0}}
+
+/* sections */
+section.block{padding-block:clamp(72px,9vw,120px)}
+section.alt{background:var(--bg-2)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:32px;align-items:end;margin-bottom:52px}
+.sec-head h2{font-size:clamp(26px,3.2vw,38px);line-height:1.45;margin-top:16px}
+.sec-head p{color:var(--ink-2);margin:0;max-width:36em}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr;gap:16px;margin-bottom:36px}}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s,transform .2s}
+.svc:hover{border-color:var(--primary);transform:translateY(-2px)}
+.svc .ic{width:44px;height:44px;border-radius:4px;background:var(--primary-soft);display:grid;place-items:center}
+.svc .ic svg{width:22px;height:22px;stroke:var(--primary);fill:none;stroke-width:1.6}
+.svc h3{font-size:19px;line-height:1.5}
+.svc h3 small{display:block;font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
+.svc p{margin:0;color:var(--ink-2);font-size:14px;flex:1}
+.svc .price{padding-top:16px;border-top:1px solid var(--line);font-family:var(--en);font-weight:700;font-size:18px;font-variant-numeric:tabular-nums}
+.svc .price span{font-family:var(--sans);font-size:12px;font-weight:400;color:var(--ink-3);margin-left:8px}
+@media (max-width:900px){.svc-grid{grid-template-columns:1fr}}
+
+/* works */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.chip{font:inherit;font-size:13px;padding:7px 18px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink-2);cursor:pointer;transition:all .2s}
+.chip:hover{border-color:var(--primary);color:var(--primary)}
+.chip[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:var(--primary-ink)}
+.works{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.work{background:var(--surface);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+.work:hover{border-color:var(--primary);transform:translateY(-2px)}
+.cover{position:relative;aspect-ratio:16/10;background:var(--bg-2)}
+.cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.work:hover .cover img{transform:scale(1.04)}
+.cover .tag{position:absolute;left:16px;top:14px;font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.16em;color:var(--primary);background:var(--surface);border:1px solid var(--line);padding:3px 10px;border-radius:2px}
+.work-body{padding:24px 28px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
+.work h3{font-size:18px;line-height:1.55}
+.work p{margin:0;color:var(--ink-2);font-size:14px;flex:1}
+.work dl{margin:0;padding-top:14px;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:6px 20px;font-size:13px}
+.work dt{color:var(--ink-3)}
+.work dd{margin:0}
+.work .more{display:inline-flex;align-items:center;gap:4px;margin-top:2px;color:var(--primary);font-size:13px;font-weight:700}
+@media (max-width:760px){.works{grid-template-columns:1fr}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;list-style:none;margin:0;padding:0}
+.step{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:24px 22px}
+.step .no{font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--primary)}
+.step h3{font-size:16px;margin-top:8px}
+.step p{margin:8px 0 0;font-size:13px;color:var(--ink-2);line-height:1.75}
+.step:not(:last-child)::after{content:"";position:absolute;right:-12px;top:50%;width:8px;height:8px;border-top:2px solid var(--primary);border-right:2px solid var(--primary);transform:translateY(-50%) rotate(45deg);opacity:.6}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.step::after{display:none}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,6vw,88px);align-items:start}
+.about-body h2{font-size:clamp(24px,2.8vw,32px);line-height:1.55;margin-top:16px}
+.about-body > p{color:var(--ink-2);max-width:36em;margin-top:20px}
+.history{margin-top:32px;border-top:1px solid var(--line)}
+.tl{display:grid;grid-template-columns:72px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px}
+.tl time{font-family:var(--en);font-weight:700;font-size:13px;color:var(--primary);font-variant-numeric:tabular-nums}
+.overview{background:var(--surface);border:1px solid var(--line);border-radius:4px}
+.overview h3{font-size:15px;padding:18px 24px;border-bottom:1px solid var(--line);background:var(--bg-2)}
+.overview dl{margin:0}
+.overview .row{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:16px 24px;border-bottom:1px solid var(--line);font-size:14px}
+.overview .row:last-child{border-bottom:0}
+.overview dt{color:var(--ink-3);font-size:13px}
+.overview dd{margin:0}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr}}
+@media (max-width:480px){.overview .row{grid-template-columns:1fr;gap:2px}}
+
+/* contact */
+.contact{background:var(--deep);color:var(--on-deep);padding-block:clamp(72px,9vw,112px)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px;align-items:center}
+.contact .label{color:var(--deep-accent)}.contact .label::before{background:var(--deep-accent)}
+.contact h2{font-size:clamp(26px,3.6vw,44px);line-height:1.45;margin-top:16px}
+.contact h2 .ph{display:inline-block}
+.contact p{opacity:.75;margin:20px 0 0;max-width:32em}
+.contact-links{display:flex;flex-direction:column;gap:12px}
+.contact-links a{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border:1px solid rgba(255,255,255,.2);border-radius:4px;font-size:15px;font-weight:500;transition:background .2s,border-color .2s}
+.contact-links a:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.45)}
+.contact-links a.main{background:var(--surface);color:var(--deep);border-color:var(--surface)}
+.contact-links a.main:hover{background:color-mix(in srgb,var(--surface) 90%,var(--deep) 10%)}
+.contact-links small{font-family:var(--en);font-size:11px;letter-spacing:.16em;opacity:.6;text-transform:uppercase}
+@media (max-width:760px){.contact-grid{grid-template-columns:1fr}}
+footer{background:var(--deep);color:var(--on-deep);border-top:1px solid rgba(255,255,255,.1)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-block:24px;font-family:var(--en);font-size:12px;letter-spacing:.08em;opacity:.6}
+
+@keyframes rise{from{transform:translateY(12px);opacity:.001}to{transform:none;opacity:1}}
+.hero .label,.hero h1,.hero-lead,.hero-actions,.hero-visual{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation-delay:.06s}.hero-lead{animation-delay:.12s}.hero-actions{animation-delay:.18s}.hero-visual{animation-delay:.26s}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="#top"><i aria-hidden="true"></i>AI Workflow &amp; Content</a>
+    <nav class="nav" aria-label="メインメニュー">
+      <!-- <a href="#services">サービス</a> サービス：一旦非表示 --><a href="#works">ポートフォリオ</a><a href="#">AI WORK NOTE</a><a href="#process">ご依頼の流れ</a><a href="#about">About</a>
+    </nav>
+    <a class="btn solid" href="#contact">お問い合わせ <span class="arr">→</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="label">Service / Portfolio</div>
+        <h1><span class="ph">AIで、仕事を</span><br><span class="ph">もっと<em>軽やかに</em>。</span></h1>
+        <p class="hero-lead">業務整理 × AI × 自動化で、<br>あなたの「本当にやりたい仕事」の時間をつくります。</p>
+        <div class="hero-actions">
+          <a class="btn solid" href="#contact">無料で相談する <span class="arr">→</span></a>
+          <a class="btn" href="#works">ポートフォリオを見る</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 360 400" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="360" height="400" rx="16" fill="var(--primary-soft)"/>
+          <circle cx="270" cy="90" r="70" fill="var(--accent)" opacity=".55"/>
+          <rect x="60" y="150" width="150" height="150" rx="14" fill="var(--surface)" stroke="var(--line)"/>
+          <circle cx="135" cy="205" r="26" fill="var(--deep)"/>
+          <path d="M92 300c6-34 26-52 43-52s37 18 43 52" fill="var(--deep)"/>
+          <rect x="100" y="255" width="70" height="46" rx="6" fill="var(--surface)" stroke="var(--primary)" stroke-width="2"/>
+          <line x1="112" y1="270" x2="158" y2="270" stroke="var(--primary)" stroke-width="2" opacity=".6"/>
+          <line x1="112" y1="280" x2="146" y2="280" stroke="var(--primary)" stroke-width="2" opacity=".4"/>
+          <g stroke="var(--primary)" stroke-width="1.5" opacity=".55">
+            <line x1="210" y1="180" x2="260" y2="140"/>
+            <line x1="210" y1="220" x2="270" y2="240"/>
+            <line x1="210" y1="260" x2="250" y2="300"/>
+          </g>
+          <circle cx="262" cy="140" r="9" fill="var(--surface)" stroke="var(--primary)" stroke-width="2"/>
+          <circle cx="272" cy="240" r="9" fill="var(--primary)"/>
+          <circle cx="250" cy="300" r="9" fill="var(--surface)" stroke="var(--primary)" stroke-width="2"/>
+          <circle cx="300" cy="330" r="5" fill="var(--accent)"/>
+          <circle cx="50" cy="80" r="5" fill="var(--accent)"/>
+          <circle cx="40" cy="330" r="4" fill="var(--primary)" opacity=".5"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="block strengths-row" aria-label="3つの強み">
+    <div class="wrap sr-grid">
+      <div class="sr-item"><span class="n">01</span><div><b>IT現場の業務管理に基づく設計</b><span>進捗・品質管理の実務経験をもとに、現場で使われる形に落とし込みます。</span></div></div>
+      <div class="sr-item"><span class="n">02</span><div><b>納品後も自走できる状態へ</b><span>手順書と定着支援で、担当者だけで運用できる状態までを整えます。</span></div></div>
+      <div class="sr-item"><span class="n">03</span><div><b>最短2週間の導入</b><span>各段階で確認をはさみ、手戻りを抑えて短期間で立ち上げます。</span></div></div>
+    </div>
+  </section>
+
+  <!-- 実績の帯：一旦非表示（実績がついてきたら表示する。2026-09-28 本人指示。戻すときはコメントを外す） -->
+  <!--
+  <div class="band" aria-label="実績の数字">
+    <div class="wrap">
+      <div class="fig"><div class="n">48<small>本</small></div><div class="l">公開記事</div></div>
+      <div class="fig"><div class="n">120<small>本</small></div><div class="l">動画コンテンツ制作</div></div>
+      <div class="fig"><div class="n">15<small>種</small></div><div class="l">業務テンプレート</div></div>
+      <div class="fig"><div class="n">6<small>回</small></div><div class="l">セミナー登壇</div></div>
+      <p class="band-note">※2026年9月時点</p>
+    </div>
+  </div>
+  -->
+
+  <!-- サービス：一旦非表示（あとで追加する。戻すときはこのコメントを外し、メニューのリンクとセクション番号も戻す）
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="label"><span class="num">01</span>Services</div><h2>サービス</h2></div>
+        <p>「作って終わり」ではなく、貴社のご担当者が明日から運用できる状態までを支援します。</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc">
+          <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg></div>
+          <h3><small>Workflow Template</small>業務テンプレート設計</h3>
+          <p>報告書・議事録・タスク管理など、繰り返し発生する業務を Notion や自動化ツールで標準化します。</p>
+          <div class="price">¥50,000〜<span>1テンプレート</span></div>
+        </div>
+        <div class="svc">
+          <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg></div>
+          <h3><small>Onboarding &amp; Training</small>導入支援・研修</h3>
+          <p>Claude Code をはじめとするAIツールの導入から、社内での定着までを伴走型で支援します。</p>
+          <div class="price">¥80,000〜<span>1回 90分</span></div>
+        </div>
+        <div class="svc">
+          <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg></div>
+          <h3><small>Content Production</small>コンテンツ制作</h3>
+          <p>AI活用をテーマにした記事・動画・資料を、企画から制作まで一括でお引き受けします。</p>
+          <div class="price">¥30,000〜<span>1本あたり</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <section class="block alt" id="works">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="label"><span class="num">01</span>Portfolio</div><h2>ポートフォリオ</h2></div>
+        <p>AIや仕組みを活用して、実際に「使える形」まで作った事例をご紹介します。</p>
+      </div>
+      <div class="filters" role="group" aria-label="カテゴリで絞り込む">
+        <button class="chip" data-f="all" aria-pressed="true">すべて</button>
+        <button class="chip" data-f="webapp" aria-pressed="false">Webアプリ</button>
+        <button class="chip" data-f="system" aria-pressed="false">業務システム</button>
+        <button class="chip" data-f="ai" aria-pressed="false">AI活用</button>
+      </div>
+
+      <div class="works">
+        <a class="work" data-cat="webapp" href="cases/skincare.html">
+          <div class="cover"><img src="assets/skincare_cover.webp" alt="肌管理アプリの画面。カレンダー、グラフ、記録の3画面" width="1200" height="750" loading="lazy"><span class="tag">WEB APP</span></div>
+          <div class="work-body">
+            <h3>肌の記録と振り返りアプリ</h3>
+            <p>肌の調子・スキンケア・睡眠・食事を毎日記録し、どんな日に肌の調子がよかったかをグラフで振り返れるWebアプリです。自分用に企画から開発まで行いました。画面は架空のデータで表示しています。</p>
+            <dl><dt>使用技術</dt><dd>HTML・CSS・JavaScript／Google Drive 連携（記録の引き継ぎ）</dd><dt>担当</dt><dd>企画・設計・開発・テスト</dd><dt>納品物</dt><dd>Webアプリ一式・使い方の手順書（設計書・動作確認の記録つき）</dd></dl>
+            <span class="more">事例を見る →</span>
+          </div>
+        </a>
+
+        <a class="work" data-cat="system" href="cases/baby-care.html">
+          <div class="cover"><img src="assets/baby-care_cover.webp" alt="運営管理システムのダッシュボード。4つの数、業務の流れと役割分担の表、これからの案件と今日のタスク" width="1200" height="750" loading="lazy"><span class="tag">BUSINESS SYSTEM</span></div>
+          <div class="work-body">
+            <h3>イベント託児の運営管理システム</h3>
+            <p>問い合わせ・申込・スタッフの手配・常設託児室のシフト・実績・請求の準備までを、1つの流れで管理する業務Webアプリです。AIは整理と下書き、最終確認と判断は人が行う役割分担にしています。ポートフォリオ用の架空の案件で、画面は架空のデータで表示しています。</p>
+            <dl><dt>使用技術</dt><dd>HTML・CSS・JavaScript／Java・PostgreSQL・Claude API</dd><dt>担当</dt><dd>企画・設計・開発</dd><dt>納品物</dt><dd>Webアプリ一式・使い方マニュアル（PDF）（設計書・動作確認の記録つき）</dd></dl>
+            <span class="more">事例を見る →</span>
+          </div>
+        </a>
+
+        <a class="work" data-cat="ai" href="cases/style-note.html">
+          <div class="cover"><img src="assets/style-note_cover.webp" alt="ビューティーアドバイザーアプリの画面。早見表、メイク手順、AIに聞いた結果の3画面" width="1200" height="750" loading="lazy"><span class="tag">AI✖️WEB APP</span></div>
+          <div class="work-body">
+            <h3>服とメイクを選ぶビューティーアドバイザーアプリ</h3>
+            <p>パーソナルカラー・骨格・顔タイプの診断結果を、毎日の服とメイク選びに使うためのWebアプリです。写真を撮ってAIに聞くと、似合うかどうかと合わせ方がわかります。自分用に企画から開発まで行いました。画面は架空のデータで表示しています。</p>
+            <dl><dt>使用技術</dt><dd>HTML・CSS・JavaScript／Claude API（AIの判定）</dd><dt>担当</dt><dd>企画・設計・開発・テスト</dd><dt>納品物</dt><dd>Webアプリ一式・使い方の手順書（設計書・動作確認の記録つき）</dd></dl>
+            <span class="more">事例を見る →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="label"><span class="num">02</span>Process</div><h2>ご依頼の流れ</h2></div>
+        <p>お問い合わせから最短2週間で納品いたします。各工程で確認をはさみ、手戻りを防ぎます。</p>
+      </div>
+      <ol class="steps">
+        <li class="step"><div class="no">STEP 01</div><h3>ヒアリング</h3><p>現状の業務と課題を、30分のオンライン面談で伺います。</p></li>
+        <li class="step"><div class="no">STEP 02</div><h3>設計・お見積り</h3><p>対象範囲と完成イメージを整理し、費用と期間をご提示します。</p></li>
+        <li class="step"><div class="no">STEP 03</div><h3>制作</h3><p>中間段階で動作をご確認いただき、方向性をすり合わせます。</p></li>
+        <li class="step"><div class="no">STEP 04</div><h3>納品・定着支援</h3><p>運用手順書をお渡しし、納品後2週間はご質問に対応します。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block alt" id="about">
+    <div class="wrap about-grid">
+      <div class="about-body">
+        <div class="label"><span class="num">03</span>About</div>
+        <h2>IT現場の業務管理から生まれた、<br>再現できる仕組みづくり。</h2>
+        <p>ITプロジェクトの進捗管理・品質管理の現場では、「確認・とりまとめ・報告」に多くの時間が費やされています。その時間をAIと自動化で仕組みに置き換え、誰でも再現できる形でご提供しています。</p>
+        <div class="history">
+          <div class="tl"><time>2024</time><span>AIツールを活用した業務の仕組み化に着手</span></div>
+          <div class="tl"><time>2025</time><span>記事・動画による情報発信を開始</span></div>
+          <div class="tl"><time>2026</time><span>業務テンプレート提供・セミナー・導入支援を開始</span></div>
+        </div>
+      </div>
+      <div class="overview">
+        <h3>概要</h3>
+        <dl>
+          <div class="row"><dt>事業内容</dt><dd>業務テンプレート設計／AIツール導入支援・研修／コンテンツ制作</dd></div>
+          <div class="row"><dt>対応領域</dt><dd>定型業務の標準化、報告・議事録の自動化、ナレッジ管理</dd></div>
+          <div class="row"><dt>使用ツール</dt><dd>Claude Code、Notion、Google Workspace、Canva ほか</dd></div>
+          <div class="row"><dt>対応形式</dt><dd>オンライン（全国対応）</dd></div>
+          <div class="row"><dt>所在地</dt><dd>東京都</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="label">Contact</div>
+        <h2><span class="ph">業務の仕組み化について、</span><br><span class="ph">お気軽にご相談ください。</span></h2>
+        <p>ご相談・お見積りは無料です。内容を確認のうえ、2営業日以内にご返信いたします。</p>
+      </div>
+      <div class="contact-links">
+        <a class="main" href="#">お問い合わせフォーム <small>Form →</small></a>
+        <a href="#">記事を読む <small>Articles →</small></a>
+        <a href="#">動画を見る <small>Videos →</small></a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><span>© 2026 AI Workflow &amp; Content</span><span>All rights reserved.</span></div></footer>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll('.chip'),works=document.querySelectorAll('.work');
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      var f=c.dataset.f;
+      chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});
+      works.forEach(function(w){w.hidden=!(f==='all'||w.dataset.cat===f)});
+    });
+  });
+})();
+</script>
+</body>
+</html>

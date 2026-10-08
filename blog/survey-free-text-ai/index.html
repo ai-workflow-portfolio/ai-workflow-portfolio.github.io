@@ -16,21 +16,25 @@
 <link rel="alternate" type="application/rss+xml" title="AI Workflow &amp; Content ブログ" href="/blog/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="/blog/assets/style.css">
+<link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "アンケートの自由記述をAIで分類・集計する手順【事前アンケート編】", "description": "講座や診断の事前アンケートで、自由記述を1件ずつ読んで分けるのに時間がかかる人へ。回答からお客様の情報を消してAIに渡し、分類・件数の数え直し・当日の準備メモまでまとめる手順を、プロンプト全文つきで紹介します。", "datePublished": "2026-10-06", "dateModified": "2026-10-06", "mainEntityOfPage": "https://ai-workflow-portfolio.github.io/blog/survey-free-text-ai/", "author": {"@type": "Organization", "name": "AI Workflow & Content ブログ"}, "publisher": {"@type": "Organization", "name": "AI Workflow & Content ブログ"}}</script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
 <header class="site-head">
   <div class="wrap head-in">
-    <a class="logo" href="/blog/"><i aria-hidden="true"></i>AI Workflow &amp; Content<span class="logo-sub">ブログ</span></a>
-    <nav aria-label="サイト"><a class="head-link" href="https://ai-workflow-portfolio.github.io/">会社のサイト</a></nav>
+    <a class="logo" href="https://ai-workflow-portfolio.github.io/"><svg viewBox="0 0 26 32" aria-hidden="true"><path class="m-arch" d="M1.5 31.5V13.5a11.5 11.5 0 0 1 23 0v18"/><text class="m-a" x="13" y="25.5" text-anchor="middle">A</text></svg>AI Workflow &amp; Content</a>
+    <nav class="nav" aria-label="メインメニュー"><a href="https://aiwf-portfolio.github.io/">ポートフォリオ</a><a class="en-link" href="/blog/" aria-current="true">AI WORK NOTE</a><a href="https://ai-workflow-portfolio.github.io/#process">ご依頼の流れ</a><a href="https://ai-workflow-portfolio.github.io/#faq">よくある質問</a><a class="en-link" href="https://ai-workflow-portfolio.github.io/#about">About</a></nav>
+    <a class="btn" href="https://ai-workflow-portfolio.github.io/#contact">お問い合わせ</a>
   </div>
 </header>
+<a class="side-cta" href="https://ai-workflow-portfolio.github.io/#contact">無料で相談する<small>Contact</small></a>
 <main id="main" class="wrap">
 <article class="article">
   <nav class="crumbs" aria-label="現在地"><a href="/blog/">ブログ</a><span aria-hidden="true">/</span><a href="/blog/category/after-service/">お客様対応のあと</a></nav>
+  <p class="en-label" aria-hidden="true">Article</p>
   <h1>アンケートの自由記述をAIで分類・集計する手順【事前アンケート編】</h1>
   <p class="article-meta"><time datetime="2026-10-06">2026年10月6日</time></p>
   <nav class="toc" aria-label="目次"><p class="toc-head">目次</p><ol><li><a href="#s1">こんな作業に、時間を取られていませんか</a></li><li><a href="#s2">結論：アンケートの自由記述のまとめ方は「消す・分ける・数える・見直す」</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">気をつけること</a></li><li><a href="#s5">どれくらい減るか</a></li><li><a href="#s6">まとめ</a></li><li><a href="#s7">参考にしたもの</a></li></ol></nav>
@@ -142,7 +146,7 @@
   <aside class="cta" aria-labelledby="cta-head">
     <h2 id="cta-head">同じような作業で、お困りではありませんか</h2>
     <p>いまの仕事の進め方をうかがって、どの作業を仕組みにできるかを一緒に整理します。</p>
-    <a class="btn" href="#">お問い合わせ</a>
+    <a class="btn solid" href="https://ai-workflow-portfolio.github.io/#contact">お問い合わせ</a>
   </aside>
 
 </article>
@@ -150,12 +154,8 @@
 </main>
 <footer class="site-foot">
   <div class="wrap foot-in">
-    <p class="logo"><i aria-hidden="true"></i>AI Workflow &amp; Content</p>
-    <ul>
-      <li><a href="https://ai-workflow-portfolio.github.io/">会社のサイト</a></li>
-      <li><a href="#">お問い合わせ</a></li>
-      <li><a href="/blog/feed.xml" aria-label="RSSフィード">RSS</a></li>
-    </ul>
+    <a class="logo" href="https://ai-workflow-portfolio.github.io/"><svg viewBox="0 0 26 32" aria-hidden="true"><path class="m-arch" d="M1.5 31.5V13.5a11.5 11.5 0 0 1 23 0v18"/><text class="m-a" x="13" y="25.5" text-anchor="middle">A</text></svg>AI Workflow &amp; Content</a>
+    <nav class="foot-nav" aria-label="フッターメニュー"><a href="https://aiwf-portfolio.github.io/">ポートフォリオ</a><a href="/blog/">AI WORK NOTE</a><a href="https://ai-workflow-portfolio.github.io/#process">ご依頼の流れ</a><a href="https://ai-workflow-portfolio.github.io/#faq">よくある質問</a><a href="https://ai-workflow-portfolio.github.io/#about">About</a><a href="https://ai-workflow-portfolio.github.io/#contact">お問い合わせ</a><a href="/blog/feed.xml" aria-label="RSSフィード">RSS</a></nav>
     <p class="copy"><small>&copy; 2026 AI Workflow &amp; Content</small></p>
   </div>
 </footer>

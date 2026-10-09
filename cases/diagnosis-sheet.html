@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>服とメイクを選ぶビューティーアドバイザーアプリ｜AI Workflow Portfolio</title>
+<title>診断のあとに送る結果シートの作成アプリ｜AI Workflow Portfolio</title>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -216,17 +216,18 @@ footer small{grid-column:1/-1;padding-top:var(--sp-5);border-top:1px solid var(-
     <div class="wrap">
         <a class="back" href="../index.html#works"><span class="arr rev" aria-hidden="true"></span>ポートフォリオへ戻る</a>
         <p class="case-label">Case</p>
-        <h1><span class="ph">服とメイクを選ぶ</span><span class="ph">ビューティー</span><span class="ph">アドバイザーアプリ</span></h1>
-        <p class="lead">パーソナルカラー・骨格・顔タイプの診断結果を、毎日の服とメイク選びに使うためのWebアプリです。自分用に企画から開発まで行い、毎日使っています。</p>
-        <div class="cover"><div class="frame"><img src="../assets/style-note_thumb.webp" alt="ビューティーアドバイザーアプリの画面。早見表、メイク手順、AIに聞いた結果の3画面" width="1200" height="750"></div></div>
-        <dl class="meta"><dt>種類</dt><dd>Webアプリ（スマホのブラウザで使う）</dd><dt>担当</dt><dd>企画・設計・開発・テスト</dd><dt>使用技術</dt><dd>HTML・CSS・JavaScript／Claude API（AIの判定）</dd><dt>納品物</dt><dd>Webアプリ一式・使い方の手順書（設計書・動作確認の記録つき）</dd></dl>
+        <h1><span class="ph">診断のあとに送る</span><span class="ph">結果シートの</span><span class="ph">作成アプリ</span></h1>
+        <p class="lead">パーソナルカラー・骨格・顔タイプなどの診断を行う個人の診断士が、診断のあとに結果を選んで入力するだけで、お客様用の結果シートと、送るときの一言の下書きを作れるWebアプリです。シートはスマホで見やすく、PDFにも保存できます。ポートフォリオ用の架空の案件として、企画から開発まで行いました。</p>
+        <p class="demo"><a class="back" href="https://diagnosis-result-sheet.github.io/">デモを開く（別のページで開きます）</a></p>
+        <div class="cover"><div class="frame"><img src="../assets/diagnosis-sheet_thumb.webp" alt="結果シート作成アプリの画面。結果の入力、色見本が並んだ結果シート、お客様に送る文の3画面" width="1200" height="750"></div></div>
+        <dl class="meta"><dt>種類</dt><dd>業務Webアプリ（スマホとPCのブラウザで使う）</dd><dt>担当</dt><dd>企画・設計・開発・テスト</dd><dt>使用技術</dt><dd>HTML・CSS・JavaScript（サーバーは使わず、ブラウザだけで動く）</dd><dt>納品物</dt><dd>Webアプリ一式（動作確認の記録つき）</dd></dl>
     </div>
   </section>
 
   <section class="block alt">
     <div class="wrap">
         <div class="sec-title"><p class="en"><span class="no">01</span>Problem</p><h2>困りごと</h2></div>
-        <div class="problem"><p class="voice">「パーソナルカラー・骨格・顔タイプの診断を受けても、結果が『診断して終わり』になりがち。お店や朝の身支度の場面で、何が似合うかをすぐ思い出せない。」</p><p class="goal">そこで、診断結果を、毎日の服選び・メイク・買い物で使える「自分専用のルールブック」にすることを目指しました。</p></div>
+        <div class="problem"><p class="voice">「診断が終わったあと、結果シートをCanvaなどで1人ずつ作っていて、時間がかかる。お客様は、診断結果を実際の服選びにどう使えばよいか分からず、あとから質問が届く。」</p><p class="goal">そこで、結果を選ぶだけで整ったシートができ、買い物のときの見方まで1枚にまとまる形を目指しました。診断の名前や項目は、診断士が自分のやり方に合わせて変えられます。</p></div>
     </div>
   </section>
 
@@ -234,33 +235,30 @@ footer small{grid-column:1/-1;padding-top:var(--sp-5);border-top:1px solid var(-
     <div class="wrap">
         <div class="sec-title"><p class="en"><span class="no">02</span>Features</p><h2>作ったもの</h2></div>
         <ul class="features">
-          <li><figure><img src="../assets/style-note_quick.webp" alt="早見表の画面。骨格・顔タイプ・パーソナルカラーと似合う色が並ぶ" width="585" height="1266" loading="lazy"><figcaption><h3><span class="ph">診断結果を</span><span class="ph">1画面の</span><span class="ph">早見表に</span></h3><p>骨格・顔タイプ・パーソナルカラーと、似合う色・服選びのルールを1画面にまとめています。</p></figcaption></figure></li>
-          <li><figure><img src="../assets/style-note_makeup.webp" alt="メイク手順の画面。ステップごとに目的とコツが出る" width="585" height="1266" loading="lazy"><figcaption><h3><span class="ph">メイクを</span><span class="ph">ステップごとに</span></h3><p>メイクの手順を1ステップずつ、目的とコツつきで表示します。片手で次へ進めます。</p></figcaption></figure></li>
-          <li><figure><img src="../assets/style-note_ai.webp" alt="AIに聞く画面。服の写真を送ると、よく似合うかどうかと、その理由・合わせ方が表示される" width="585" height="1266" loading="lazy"><figcaption><h3><span class="ph">写真を撮って</span><span class="ph">AI に聞く</span></h3><p>服やコスメの写真を撮ると、診断のルールをもとに AI が似合うかを判定し、理由と合わせ方まで答えます。</p></figcaption></figure></li>
+          <li><figure><img src="../assets/diagnosis-sheet_input.webp" alt="結果を入力する画面。お客様の呼び名と診断日、診断の種類（パーソナルカラー・骨格・顔タイプ診断）を選ぶ欄" width="585" height="1266" loading="lazy"><figcaption><h3><span class="ph">結果を選ぶだけで</span><span class="ph">入力できる</span></h3><p>診断の種類と結果を選び、ベストカラー・苦手になりやすい色・似合う形や素材・ひと言メモを入れます。入力すると、お客様用のシートがすぐに変わります。</p></figcaption></figure></li>
+          <li><figure><img src="../assets/diagnosis-sheet_sheet.webp" alt="結果シートの画面。色の特徴を示すものさしと、特に似合う色の色見本が並ぶ" width="585" height="1266" loading="lazy"><figcaption><h3><span class="ph">お客様が見返せる</span><span class="ph">結果シート</span></h3><p>色見本・似合う形や素材・買い物のときのチェックポイント・診断士のコメントを、1枚にまとめます。スマホで見やすく、PDFにして保存もできます。</p></figcaption></figure></li>
+          <li><figure><img src="../assets/diagnosis-sheet_message.webp" alt="お客様に送る文の画面。LINEとメールを切りかえられ、お客様の名前と診断結果が入った下書きが出ている" width="585" height="1266" loading="lazy"><figcaption><h3><span class="ph">送るときの一言を</span><span class="ph">下書きする</span></h3><p>LINE用とメール用（件名つき）の文を、お客様の名前と診断結果を入れて作ります。その場で直して、コピーできます。このアプリからは送りません。</p></figcaption></figure></li>
         </ul>
-        <p class="note">画面は、架空のデータを入れて撮影しています。</p>
+        <p class="note">画面は、架空のお客様のデータを入れて撮影しています。</p>
     </div>
   </section>
 
   <section class="block alt">
     <div class="wrap">
         <div class="sec-title"><p class="en"><span class="no">03</span>Ideas</p><h2>工夫したこと</h2></div>
-        <dl class="deliver"><div><dt><span class="ph">AI の答えに</span><span class="ph">根拠がつく</span></dt><dd>骨格・顔タイプ・パーソナルカラー・メイクレッスンの内容をまとめて AI に渡すので、「なぜ似合うか・何を足せばよいか」まで返ってきます。</dd></div><div><dt><span class="ph">品番だけでも</span><span class="ph">調べて</span><span class="ph">判定する</span></dt><dd>商品を調べる係の AI を別にして、そちらには品番などの文字だけを渡します。</dd></div><div><dt><span class="ph">使った金額が</span><span class="ph">見える</span></dt><dd>今月 AI を使った回数と金額を、設定画面に表示します。</dd></div></dl>
+        <dl class="deliver"><div><dt><span class="ph">診断の名前と</span><span class="ph">結果の呼び方を、</span><span class="ph">診断士が</span><span class="ph">変えられる</span></dt><dd>診断の名前、結果の名前とひと言の説明を、設定で変えられます。自分で決めた診断を足して、結果の候補を並べることもできます。似合う形や買い物のチェックポイントは、入力画面でお客様ごとに書き足せます。</dd></div><div><dt><span class="ph">結果を入れていない所は、</span><span class="ph">シートに</span><span class="ph">出さない</span></dt><dd>入れた項目だけがシートに並びます。空の見出しや、「未入力」の文字がお客様に届くことはありません。</dd></div><div><dt><span class="ph">買い物のときに</span><span class="ph">使える形にする</span></dt><dd>色見本と、似合う形・素材に加えて、お店で見るときのチェックポイントをまとめます。診断後の「どう選べばよいか」という質問を減らすためです。</dd></div><div><dt><span class="ph">色の特徴を、</span><span class="ph">ものさしで</span><span class="ph">見せる</span></dt><dd>色みや明るさなどを、言葉だけでなく、ものさしの図で示します。お客様が、自分の色の傾向をひと目でつかめます。</dd></div></dl>
     </div>
   </section>
 
   <section class="block">
     <div class="wrap">
         <div class="sec-title"><p class="en"><span class="no">04</span>Process</p><h2>進め方</h2></div>
-        <p class="note" style="margin:0 0 var(--sp-4)">どのアプリも、次の5つの観点で整理して作っています。</p>
+        <p class="note" style="margin:0 0 var(--sp-4)">次の3つの観点で整理して作っています。</p>
         <ol class="steps">
-          <li><div><h3>目的から決める</h3><p class="how">だれが・いつ・何のために使うかを先に決め、「どうなれば完成か」を1つずつ言葉にします</p></div><p>「お店や朝の支度で、その場で使える」を基準に、スマホの片手操作を前提にしました。</p></li>
-          <li><div><h3>続けられる使いやすさ</h3><p class="how">文字の大きさ・色の濃さ・押しやすさを、決めた基準で確かめます</p></div><p>ステップごとのメイク手順を、片手で次へ進めるようにしました。</p></li>
-          <li><div><h3>データの安全</h3><p class="how">どのデータをどこへ送ってよいかを先に表で決め、公的なガイドラインをもとに確かめます</p></div><p>AI に送るものを表で決め、商品を調べる係には品番などの文字だけを渡します。</p></li>
-          <li><div><h3>壊さない・失わない</h3><p class="how">直すたびに、実際に動かして確かめます</p></div><p>新しい版が出たら知らせる仕組みで、いつも最新の版を使えるようにしました。</p></li>
-          <li><div><h3>使いながら育てる</h3><p class="how">実際に使い、気づいた所を直します</p></div><p>毎日の服・メイク選びで使っています（実運用中）。</p></li>
+          <li><div><h3>目的から決める</h3><p class="how">だれが・いつ・何のために使うかを先に決め、確かめたいことを言葉にする</p></div><p>「診断のあとの作業を軽くする」「お客様が服選びに使える」を目的に決め、確かめたいことを画面ごと（入力画面と、お客様用の結果シート）に書き出してから作りました。</p></li>
+          <li><div><h3>続けられる使いやすさ</h3><p class="how">文字の大きさ・色の濃さ・押しやすさを、決めた基準で確かめる</p></div><p>診断士が診断のあとにスマホで入力し、お客様もスマホで見る前提で、文字の大きさと押しやすさを決めました。色見本の見え方が変わらないよう、シートの地は白にしています。</p></li>
+          <li><div><h3>データの安全</h3><p class="how">保存や通信をしない作りにする</p></div><p>入力した内容は保存せず、外へも送りません。お客様の情報の唯一の置き場所にならないよう、元のデータは診断士の手元に残る作りにしました。</p></li>
         </ol>
-        <p class="note">使いやすさとデータの安全は、それぞれ独自にまとめたルール（デザインは文字の大きさ・色の濃さ・押しやすさなど。セキュリティは IPA「安全なウェブサイトの作り方」と、OWASP Top 10（Webでよく狙われる弱点の一覧）がもと）の項目ごとに確かめています。</p>
     </div>
   </section>
 
@@ -268,11 +266,10 @@ footer small{grid-column:1/-1;padding-top:var(--sp-5);border-top:1px solid var(-
     <div class="wrap">
         <div class="sec-title"><p class="en"><span class="no">05</span>Security &amp; Data</p><h2>安全とデータの扱い</h2></div>
         <ul class="list">
-          <li>サーバーを持たず、診断データと判定の履歴はスマホのブラウザの中にだけ保存します。</li>
-          <li>AI の判定では、判定に使う写真・診断の文字・メモなどを、AI（Claude）にだけ直接送ります。送ってよいものは表で決めています。</li>
-          <li>AI の利用キーは端末の中だけに置き、自動でお金が足されない設定にして、使える額を前払いの残高までにしています。</li>
-          <li>商品を調べる係の AI には、商品名・品番などの文字だけを渡し、写真や診断データは渡さない仕組みにしています。</li>
-          <li>データを送ってよい先を表で決め、それ以外には送らない作りにしています。</li>
+          <li>入力した内容は、ブラウザに保存しません。画面を閉じると消えます。</li>
+          <li>外のサービスへ通信しません。お客様の名前や診断結果が、外へ送られることはありません。</li>
+          <li>送る文は、コピーして診断士ご自身がLINEやメールに貼ります。アプリが自動で送ることはありません。</li>
+          <li>商標登録されている診断名を使う場合は、その旨を画面に示します。</li>
         </ul>
     </div>
   </section>
@@ -280,10 +277,10 @@ footer small{grid-column:1/-1;padding-top:var(--sp-5);border-top:1px solid var(-
   <section class="block">
     <div class="wrap">
         <div class="sec-title"><p class="en"><span class="no">06</span>Deliverables</p><h2>納品物のイメージ</h2></div>
-        <dl class="deliver"><div><dt>Webアプリ一式</dt><dd>画面・動き・保存の仕組みをまとめたファイル。GitHub Pages（無料でWebページを公開できるサービス）などに置くだけで動きます</dd></div><div><dt>使い方・公開の手順書</dt><dd>初めての方でも、手順どおりに進めれば使い始められる資料です</dd></div></dl>
+        <dl class="deliver"><div><dt>Webアプリ一式</dt><dd>画面のファイルをまとめてお渡しします</dd></div></dl>
         <p class="note">あわせて、次の資料もお付けします。</p>
-        <dl class="deliver" style="margin-top:var(--sp-3)"><div><dt>設計書</dt><dd>画面の流れ、保存するデータの形、外とのつながりをまとめた資料です</dd></div><div><dt>動作確認の記録</dt><dd>何を確かめて、どうだったかの一覧です</dd></div></dl>
-        <p class="note">見本のアプリは自分用のため、一部そろっていない資料もあります。</p>
+        <dl class="deliver" style="margin-top:var(--sp-3)"><div><dt>動作確認の記録</dt><dd>何を確かめて、どうだったかの一覧です</dd></div></dl>
+        <p class="note">見本は架空の案件のため、一部そろっていない資料もあります。この見本には、使い方の手順書と設計書はありません。画面写真は、架空のデータで撮影しています。</p>
     </div>
   </section>
 

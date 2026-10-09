@@ -136,6 +136,10 @@ html{scroll-padding-top:96px}
 .cta{background:var(--blush);border-top:1px solid var(--gold);padding:var(--sp-7) var(--sp-6);margin-top:var(--sp-8)}
 .cta h2{font-size:var(--fs-h3)}
 .cta p{margin:var(--sp-3) 0 var(--sp-6);color:var(--ink-2)}
+.cta .cta-mail{display:flex;align-items:center;flex-wrap:wrap;gap:0 var(--sp-3);margin:var(--sp-3) 0 0;color:var(--ink)}
+.cta .mail-link{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.3em;overflow-wrap:anywhere;transition:color .2s}
+.cta .mail-link:hover{color:var(--rose)}
+.cta .mail-link:active{opacity:.7}
 /* ボタン（01 と同じ。ふつうは枠だけ、.solid で塗り） */
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding-inline:var(--sp-7);border:1px solid var(--primary);border-radius:var(--radius);color:var(--primary);font-size:var(--fs-ui);font-weight:500;letter-spacing:.14em;white-space:nowrap;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
 .btn:hover{background:var(--primary);color:var(--primary-ink)}

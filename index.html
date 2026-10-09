@@ -322,6 +322,10 @@ section.blush{background:var(--blush)}
 .contact .sec-title h2{display:block;margin-top:var(--sp-5);font-size:clamp(24px,3vw,36px);line-height:1.5}
 .contact .sec-title h2::before{display:none}
 .contact p{margin:var(--sp-5) 0 0;max-width:30em}
+.contact .mail-line{display:flex;align-items:center;flex-wrap:wrap;gap:0 var(--sp-3);margin-top:var(--sp-3)}
+.contact .mail-link{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.3em;overflow-wrap:anywhere;transition:color .2s}
+.contact .mail-link:hover{color:var(--deep-accent)}
+.contact .mail-link:active{opacity:.7}
 .contact-links{display:flex;flex-direction:column;gap:var(--sp-3)}
 .contact-links a{display:flex;justify-content:space-between;align-items:center;gap:var(--sp-4);min-height:68px;padding:0 var(--sp-6);border:1px solid var(--deep-line-strong);border-radius:var(--radius);font-size:var(--fs-body);letter-spacing:.1em;transition:background .2s,border-color .2s}
 .contact-links a:hover{border-color:var(--deep-accent)}
@@ -559,9 +563,10 @@ footer small{grid-column:1/-1;padding-top:var(--sp-5);border-top:1px solid var(-
         <p class="en"><span class="no">07</span>Contact</p>
         <h2><span class="ph">業務の</span><span class="ph">仕組み化について、</span><br><span class="ph">お気軽にご相談ください。</span></h2>
         <p>ご相談・お見積りは無料です。内容を確認のうえ、2営業日以内にご返信いたします。</p>
+        <p class="mail-line">メール　<a class="mail-link" href="mailto:rin.studio.ai@gmail.com">rin.studio.ai@gmail.com</a></p>
       </div>
       <div class="contact-links">
-        <a class="main tbd" href="#">お問い合わせフォーム <small>Form <span class="arr" aria-hidden="true"></span></small></a>
+        <a class="main" href="mailto:rin.studio.ai@gmail.com">メールでお問い合わせ <small>Mail <span class="arr" aria-hidden="true"></span></small></a>
         <a class="tbd" href="#">記事を読む <small>Articles <span class="arr" aria-hidden="true"></span></small></a>
         <a class="tbd" href="#">動画を見る <small>Videos <span class="arr" aria-hidden="true"></span></small></a>
       </div>

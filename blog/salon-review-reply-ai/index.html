@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>サロンの口コミ返信をAIで下書きする手順【例文・指示文つき】｜AI Workflow &amp; Content ブログ</title>
+<meta name="description" content="ネイルやまつげなど一人サロンで、Googleの口コミ返信に時間を取られている人へ。高評価と低評価、それぞれの返信をAIで下書きし、自分で仕上げるまでの手順を、指示文（プロンプト）の全文と例文つきで紹介します。">
+<link rel="canonical" href="https://ai-workflow-portfolio.github.io/blog/salon-review-reply-ai/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="サロンの口コミ返信をAIで下書きする手順【例文・指示文つき】｜AI Workflow &amp; Content ブログ">
+<meta property="og:description" content="ネイルやまつげなど一人サロンで、Googleの口コミ返信に時間を取られている人へ。高評価と低評価、それぞれの返信をAIで下書きし、自分で仕上げるまでの手順を、指示文（プロンプト）の全文と例文つきで紹介します。">
+<meta property="og:url" content="https://ai-workflow-portfolio.github.io/blog/salon-review-reply-ai/">
+<meta property="og:site_name" content="AI Workflow &amp; Content ブログ">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="application/rss+xml" title="AI Workflow &amp; Content ブログ" href="/blog/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/blog/assets/style.css">
+<link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "サロンの口コミ返信をAIで下書きする手順【例文・指示文つき】", "description": "ネイルやまつげなど一人サロンで、Googleの口コミ返信に時間を取られている人へ。高評価と低評価、それぞれの返信をAIで下書きし、自分で仕上げるまでの手順を、指示文（プロンプト）の全文と例文つきで紹介します。", "datePublished": "2026-10-10", "dateModified": "2026-10-10", "mainEntityOfPage": "https://ai-workflow-portfolio.github.io/blog/salon-review-reply-ai/", "author": {"@type": "Organization", "name": "AI Workflow & Content ブログ"}, "publisher": {"@type": "Organization", "name": "AI Workflow & Content ブログ"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="logo" href="https://ai-workflow-portfolio.github.io/"><svg viewBox="0 0 26 32" aria-hidden="true"><path class="m-arch" d="M1.5 31.5V13.5a11.5 11.5 0 0 1 23 0v18"/><text class="m-a" x="13" y="25.5" text-anchor="middle">A</text></svg>AI Workflow &amp; Content</a>
+    <nav class="nav" aria-label="メインメニュー"><a href="https://aiwf-portfolio.github.io/">ポートフォリオ</a><a class="en-link" href="/blog/" aria-current="true">AI WORK NOTE</a><a href="https://ai-workflow-portfolio.github.io/#process">ご依頼の流れ</a><a href="https://ai-workflow-portfolio.github.io/#faq">よくある質問</a><a class="en-link" href="https://ai-workflow-portfolio.github.io/#about">About</a></nav>
+    <a class="btn" href="mailto:rin.studio.ai@gmail.com">お問い合わせ</a>
+  </div>
+</header>
+<a class="side-cta" href="mailto:rin.studio.ai@gmail.com">無料で相談する<small>Contact</small></a>
+<main id="main" class="wrap">
+<article class="article">
+  <nav class="crumbs" aria-label="現在地"><a href="/blog/">ブログ</a><span aria-hidden="true">/</span><a href="/blog/category/after-service/">お客様対応のあと</a></nav>
+  <p class="en-label" aria-hidden="true">Article</p>
+  <h1>サロンの口コミ返信をAIで下書きする手順【例文・指示文つき】</h1>
+  <p class="article-meta"><time datetime="2026-10-10">2026年10月10日</time><span>更新 <time datetime="2026-10-10">2026年10月10日</time></span></p>
+  <nav class="toc" aria-label="目次"><p class="toc-head">目次</p><ol><li><a href="#s1">こんな作業に、時間を取られていませんか</a></li><li><a href="#s2">結論：口コミ返信は「ルール・下書き・事実・投稿」で減らせます</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">気をつけること</a></li><li><a href="#s5">どれくらい減るか</a></li><li><a href="#s6">まとめ</a></li><li><a href="#s7">参考にしたもの</a></li></ol></nav>
+  <div class="prose">
+<p>ネイルやまつげ、美容室などを一人で営むサロンでは、Googleマップに届いた口コミへの返信を、施術のあとの夜に1件ずつ考えている人が多いのではないでしょうか。口コミ返信の例文を探しても、そのまま使うと「どこかで見た文」になり、結局は自分で書き直すことになります。</p>
+<p>この記事では、AIに返信の下書きを作らせて、自分で仕上げるまでの手順を紹介します。結論から言うと、<strong>「お店のルールを1回だけ作る → 口コミを貼って下書きを出す → 事実を足して直す → 自分で投稿する」の4段</strong>です。下書きまではAIに任せ、事実の確認と投稿は自分でやります。</p>
+<p>指示文（プロンプト）は、高評価用と低評価用の2つを全文で載せています。そのままコピーして使えます。</p>
+<h2 id="s1">こんな作業に、時間を取られていませんか</h2>
+<p>たとえば、ネイルサロンを一人でやっているオーナーさんの例です。</p>
+<ul><li>Googleマップに、月に5〜10件ほど口コミが届く</li><li>「ありがとうございます」だけでは短すぎる気がして、毎回ひとこと添えたい</li><li>低い評価の口コミが来ると、どう返せばよいか分からず、数日そのままになってしまう</li></ul>
+<p>返信は、書くこと自体より「何を書くか考える時間」と「低評価のときの気の重さ」が負担になりがちです。ここは、AIに下書きを出してもらうと軽くなります。</p>
+<h2 id="s2">結論：口コミ返信は「ルール・下書き・事実・投稿」で減らせます</h2>
+<p>全体の流れは次の4段です。</p>
+<figure><a href="/blog/salon-review-reply-ai/images/flow-4steps.svg" target="_blank" rel="noopener"><img src="/blog/salon-review-reply-ai/images/flow-4steps.svg" alt="返信のルールを作る、高評価は口コミを貼って下書きを出す、低評価は事実のメモを書いてから下書きを出す、事実を確かめて自分の言葉に直す、自分で投稿する、の流れ" width="640" height="560" loading="lazy"></a><figcaption>図1：口コミ返信の流れ。低評価のときだけ、事実のメモが先に入ります</figcaption></figure>
+<div class="table"><table><thead><tr><th>段</th><th>やること</th><th>だれがやるか</th><th>かかる時間（目安）</th></tr></thead><tbody><tr><td>1</td><td>お店の「返信のルール」を作る（最初の1回だけ）</td><td>自分</td><td>10分</td></tr><tr><td>2</td><td>口コミを貼り、返信の下書きを出してもらう</td><td>AI</td><td>1分</td></tr><tr><td>3</td><td>事実（来店の内容・お店の対応）を確かめて、自分の言葉に直す</td><td>自分</td><td>3〜5分</td></tr><tr><td>4</td><td>Googleビジネス プロフィール（お店の情報や口コミを管理する、Googleのサービス）で、自分で投稿する</td><td>自分</td><td>1分</td></tr></tbody></table></div>
+<p>ポイントは2つです。ひとつは、<strong>AIに事実を作らせないこと</strong>。AIは、書かれていない来店の内容や、お店の対応を、それらしく書いてしまうことがあります。もうひとつは、<strong>低評価の返信は、下書きを出す前に「事実のメモ」を自分で書くこと</strong>です。</p>
+<h2 id="s3">手順</h2>
+<p>ここでは、ChatGPT や Claude などの対話型のAI（文章で質問すると文章で答えてくれるAI）を使う例で説明します。</p>
+<h3>ステップ1：お店の「返信のルール」を作る</h3>
+<p>毎回、口調や署名を説明するのは大変なので、最初に1回だけ、お店の決まりをメモ帳などに作っておきます。次の文の（　）を自分のお店に合わせて埋めてください。</p>
+<pre><code>【お店の返信のルール】
+- お店の種類：（例：ネイルサロン。オーナー1人のプライベートサロン）
+- 署名：（例：オーナー　〇〇）
+- 口調：です・ます調。やわらかく、かしこまりすぎない
+- 一人称：「私」
+- 長さ：3〜5文。長くしすぎない
+- 書かないこと：
+  ・お客様のフルネーム、日付、施術のメニューや回数など、来店の細かい内容
+  ・割引やクーポンの案内
+  ・「また書いてください」などの口コミの依頼
+  ・事実かどうか分からないこと</code></pre>
+<h3>ステップ2：高評価の口コミは、貼って下書きを出してもらう</h3>
+<p>高評価（星4〜5）の口コミは、口コミの文を貼るだけで下書きが出ます。次の指示文をAIに貼り、（　）に口コミの文を入れます。</p>
+<pre><code>あなたは、サロンのオーナーの返信を手伝うアシスタントです。
+下の「お店の返信のルール」を守って、Googleの口コミへの返信の下書きを3つ作ってください。
+
+条件：
+- 口コミに書かれている内容に1つ触れてください（定型文だけの返信にしないでください）
+- 口コミに書かれていないことを、付け足さないでください（施術の内容、会話の内容、日付など）
+- 3つは、書き出しと結び方を変えてください
+- 感謝のあとに、お店の新しい情報や、1回の来店では分からない情報を1文だけ入れる案を、3つのうち1つだけ入れてください。入れるときは【ここに事実を入れる】と空欄にしてください
+- 割引・クーポン・次回の特典の案内は書かないでください
+
+【お店の返信のルール】
+（ステップ1のメモを貼る）
+
+【口コミ】
+（口コミの文を貼る。投稿者の名前は貼らないでください）</code></pre>
+<p><strong>投稿者の名前は貼らず</strong>に、口コミの本文だけを貼ります。返信のなかで名前を呼びかけたいときは、自分で書き足します。</p>
+<p>たとえば、こんな口コミを貼ったとします。</p>
+<blockquote><p>初めて行きました。希望の色を伝えたら、肌の色に合う微妙な違いまで一緒に考えてくれて、仕上がりにも満足です。</p></blockquote>
+<p>出てくる下書きの1つは、次のような形です。</p>
+<blockquote><p>ご来店とあたたかいお言葉をありがとうございます。色選びを一緒に考える時間を気に入っていただけて、とてもうれしいです。仕上がりにもご満足いただけたとのこと、安心いたしました。またお会いできる日を楽しみにしています。<br>オーナー　〇〇</p></blockquote>
+<p>3つの案から、いちばん近いものを選び、自分の言葉に直します。直すのは、数語だけで済むこともあります。</p>
+<h3>ステップ3：低評価の口コミは、先に「事実のメモ」を書く</h3>
+<p>低評価（星1〜3）や、不満が書かれた口コミは、<strong>AIに渡す前に、事実を自分で確かめます</strong>。口コミだけを貼ると、AIは「何があったか」を想像で補ってしまうためです。</p>
+<p>Googleの公式ヘルプも、否定的な口コミへの返信では、投稿者の来店や利用の記録を確認して理由を把握すること、誠実に対応すること、必要に応じて謝ること、個人情報を公開しないこと、を挙げています（参考にしたもの①）。この「確認」の部分は、AIではなく自分でやります。</p>
+<p>次の形で、事実のメモを3〜5行で書きます。</p>
+<pre><code>【事実のメモ】
+- 口コミの不満（自分の言葉で）：（例：予約の時間より15分待たされた）
+- 実際にあったこと：（例：前のお客様の施術が延びて、お待たせした。連絡はしていなかった）
+- お店として認めること：（例：待たせたこと、連絡しなかったこと）
+- お店として直すこと（本当にやることだけ）：（例：次から、延びそうなときは前日までにメッセージを送る）
+- 返信で言わないこと：（例：お客様の施術内容、日付、お名前）</code></pre>
+<p>「直すこと」は、<strong>本当にやることだけ</strong>を書きます。AIは、やるつもりのない改善策を立派に書いてしまうことがあります。書いたことは、お店として約束することになります。</p>
+<p>メモができたら、次の指示文で下書きを出します。</p>
+<pre><code>あなたは、サロンのオーナーの返信を手伝うアシスタントです。
+下の「お店の返信のルール」と「事実のメモ」だけをもとに、Googleの低い評価の口コミへの返信の下書きを2つ作ってください。
+
+条件：
+- 順番は「お詫び → 口コミで受け取った内容 → 事実のメモにある、お店として認めること → お店として直すこと → 結び」にしてください
+- 事実のメモに書かれていないことは、書かないでください。理由の推測や、言い訳もしないでください
+- 口コミに書かれていない不満や、お客様の気持ちを決めつけないでください
+- 「改善します」だけで終わらせず、メモにある具体的な内容を書いてください。メモに「直すこと」がなければ、お話を聞かせてほしい旨だけを書いてください
+- 2つの案は、結びの文を変えてください
+- お客様のお名前、日付、施術の内容は書かないでください
+
+【お店の返信のルール】
+（ステップ1のメモを貼る）
+
+【事実のメモ】
+（上のメモを貼る）
+
+【口コミ】
+（口コミの文を貼る。投稿者の名前は貼らないでください）</code></pre>
+<p>出てきた下書きの形は、次のようになります。</p>
+<blockquote><p>このたびは、お待たせしてしまい申し訳ありません。ご予約のお時間から待つことになったこと、また、お待たせすることを事前にお伝えできなかったことは、私の対応が足りませんでした。今後は、前のご予約が延びそうなときは、前日までにメッセージでお知らせするようにします。貴重なご意見をありがとうございました。<br>オーナー　〇〇</p></blockquote>
+<p><strong>星1〜2の口コミは、AIの下書きを、そのまま使わないでください。</strong> 内容が重いときほど、自分の言葉で書き直します。AIの下書きは、書き出しを考える材料として使うくらいがちょうどよいです。</p>
+<h3>ステップ4：自分で見直して、投稿する</h3>
+<p>下書きを、次の表で見直します。</p>
+<div class="table"><table><thead><tr><th>見るところ</th><th>見る内容</th></tr></thead><tbody><tr><td>事実</td><td>口コミに書かれていないことが、足されていないか</td></tr><tr><td>約束</td><td>「直すこと」は、本当にやることだけか</td></tr><tr><td>お客様の情報</td><td>お名前・日付・施術の内容が入っていないか</td></tr><tr><td>お願いや宣伝</td><td>割引・クーポン・「また書いてください」が入っていないか</td></tr><tr><td>口調</td><td>自分の話し方に近いか（「〜させていただきます」が続いていないか）</td></tr><tr><td>署名</td><td>名前かイニシャルを添えたか</td></tr></tbody></table></div>
+<p>Googleの公式ヘルプは、返信全般では丁寧で簡潔にまとめることを、否定的なクチコミへの返信では、名前またはイニシャルを添えると信頼性が高まることを挙げています（参考にしたもの①）。</p>
+<p>投稿は、ビジネス プロフィールの管理画面で、自分で行います。「クチコミを読む」を開き、返信したい口コミの横にある返信アイコンを選びます。入力欄に返信を書いて「返信」を押すと投稿できます（参考にしたもの②）。</p>
+<figure><a href="/blog/salon-review-reply-ai/images/screen-reply-image.svg" target="_blank" rel="noopener"><img src="/blog/salon-review-reply-ai/images/screen-reply-image.svg" alt="クチコミを読む画面のイメージ。口コミの右下の返信アイコンが1、返信の入力欄が2、「返信」ボタンが3として赤い枠で示されている" width="640" height="520" loading="lazy"></a><figcaption>図2：返信の手順（画面のイメージ。実際の表示とは少し違うことがあります）</figcaption></figure>
+<p>返信できるのは、ビジネスのオーナー確認を済ませた人だけです。投稿した返信は、Googleの審査を受けてから公開されます。審査は通常10分以内ですが、最長で30日ほどかかる場合もあるとヘルプに書かれています（2026年10月10日に確認）。公開されるまでに時間がかかることがあります。</p>
+<h2 id="s4">気をつけること</h2>
+<h3>AIに渡す情報は、必要なところだけにする</h3>
+<figure><a href="/blog/salon-review-reply-ai/images/ai-boundary.svg" target="_blank" rel="noopener"><img src="/blog/salon-review-reply-ai/images/ai-boundary.svg" alt="AIに渡すものは、口コミの本文・事実のメモ・お店の返信のルール。渡さないものは、投稿者の名前・来店した日付・施術のメニューや回数・お客様の連絡先" width="640" height="470" loading="lazy"></a><figcaption>図3：AIに渡すものと、渡さないもの</figcaption></figure>
+<p>口コミの本文は公開されていますが、<strong>投稿者の名前は貼らない</strong>ようにします。事実のメモにも、お客様の名前・日付・施術の内容は書かず、「予約より15分待たせた」のように、起きたことだけを書きます。使っているAIサービスに、入力した内容を学習に使わない設定があるかは、そのサービスの公式のヘルプで確かめておきます。</p>
+<p>お客様の情報を消してからAIに渡す考え方は、<a href="/blog/survey-free-text-ai/">アンケートの自由記述をAIで分類・集計する手順</a>と同じです。</p>
+<h3>AIに任せないこと</h3>
+<ul><li><strong>事実の確認</strong>：何があったかは、自分で思い出し、予約の記録を見て確かめます</li><li><strong>お店としての約束</strong>：「直すこと」は、やれることだけを自分で決めます</li><li><strong>重い口コミへの返信</strong>：星1〜2や、けがや体調に関わる内容は、自分の言葉で書きます</li><li><strong>投稿</strong>：返信は、自分が読んで、自分で押します</li></ul>
+<h3>事実と違う口コミは、返信で言い争わない</h3>
+<p>「事実と違う」「納得できない」と感じても、それだけでは削除の理由になりません。Googleのヘルプでは、報告できるのはGoogleのポリシーに違反しているクチコミで、内容に不満があるというだけの報告は避けるよう書かれています。Googleは、事業者とお客様のあいだの争いには関わらないとしています（参考にしたもの③）。ポリシー違反に当たると思われるときだけ、「クチコミを読む」から対象の口コミを選んで報告します。</p>
+<p>返信では、感情的にならず、事実だけを短く伝えるのが基本です。</p>
+<h2 id="s5">どれくらい減るか</h2>
+<p>目安ですが、月に5〜10件の返信なら、次のくらいになります（測った数字ではありません）。</p>
+<div class="table"><table><thead><tr><th></th><th>手でやる場合</th><th>この手順の場合</th></tr></thead><tbody><tr><td>高評価の返信（1件）</td><td>10〜15分</td><td>5〜7分（下書きを出す1分＋選んで直す3〜5分＋投稿1分）</td></tr><tr><td>低評価の返信（1件）</td><td>20〜30分</td><td>10〜15分（事実のメモは自分で書く）</td></tr><tr><td>返信の「何を書こう」と考える時間</td><td>毎回</td><td>ほぼなくなる</td></tr></tbody></table></div>
+<p>減るのは、おもに「書き出しを考える時間」です。低評価の返信は、事実を確かめる時間が残るので、あまり短くなりません。</p>
+<h2 id="s6">まとめ</h2>
+<ol><li>お店の<strong>返信のルール</strong>を1回だけ作り、毎回貼ります</li><li>高評価は口コミを貼って下書きを出し、低評価は<strong>事実のメモを自分で書いてから</strong>下書きを出します</li><li>AIに任せるのは下書きまで。<strong>事実の確認・約束・投稿は自分で</strong>行います</li></ol>
+<h2 id="s7">参考にしたもの</h2>
+<ul><li>① Google ビジネス プロフィール ヘルプ「クチコミを増やすためのヒント」内の「クチコミに対して効果的な返信を書くためのヒント」 https://support.google.com/business/answer/3474122?hl=ja （2026年10月10日に確認）</li><li>② Google ビジネス プロフィール ヘルプ「ユーザーからのクチコミを管理する」 https://support.google.com/business/answer/3474050?hl=ja （2026年10月10日に確認）</li><li>③ Google ビジネス プロフィール ヘルプ「ビジネス プロフィール上の不適切なクチコミを報告する」 https://support.google.com/business/answer/4596773?hl=ja （2026年10月10日に確認）</li></ul>
+  </div>
+  <aside class="cta" aria-labelledby="cta-head">
+    <h2 id="cta-head">同じような作業で、お困りではありませんか</h2>
+    <p>いまの仕事の進め方をうかがって、どの作業を仕組みにできるかを一緒に整理します。</p>
+    <a class="btn solid" href="mailto:rin.studio.ai@gmail.com">お問い合わせ</a>
+    <p class="cta-mail">メール　<a class="mail-link" href="mailto:rin.studio.ai@gmail.com">rin.studio.ai@gmail.com</a></p>
+  </aside>
+
+</article>
+<section class="related"><h2>同じカテゴリの記事</h2><ul class="posts"><li class="post"><a href="/blog/survey-free-text-ai/"><span class="post-meta"><time datetime="2026-10-06">2026年10月6日</time><span class="cat">お客様対応のあと</span></span><span class="post-title">アンケートの自由記述をAIで分類・集計する手順【事前アンケート編】</span><span class="post-desc">講座や診断の事前アンケートで、自由記述を1件ずつ読んで分けるのに時間がかかる人へ。回答からお客様の情報を消してAIに渡し、分類・件数の数え直し・当日の準備メモまでまとめる手順を、プロンプト全文つきで紹介します。</span></a></li></ul></section>
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-in">
+    <a class="logo" href="https://ai-workflow-portfolio.github.io/"><svg viewBox="0 0 26 32" aria-hidden="true"><path class="m-arch" d="M1.5 31.5V13.5a11.5 11.5 0 0 1 23 0v18"/><text class="m-a" x="13" y="25.5" text-anchor="middle">A</text></svg>AI Workflow &amp; Content</a>
+    <nav class="foot-nav" aria-label="フッターメニュー"><a href="https://aiwf-portfolio.github.io/">ポートフォリオ</a><a href="/blog/">AI WORK NOTE</a><a href="https://ai-workflow-portfolio.github.io/#process">ご依頼の流れ</a><a href="https://ai-workflow-portfolio.github.io/#faq">よくある質問</a><a href="https://ai-workflow-portfolio.github.io/#about">About</a><a href="mailto:rin.studio.ai@gmail.com">お問い合わせ</a><a href="/blog/feed.xml" aria-label="RSSフィード">RSS</a></nav>
+    <p class="copy"><small>&copy; 2026 AI Workflow &amp; Content</small></p>
+  </div>
+</footer>
+</body>
+</html>

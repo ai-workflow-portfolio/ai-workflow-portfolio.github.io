@@ -1,0 +1,27 @@
+<svg width="640" height="470" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 470" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif">
+  <rect width="640" height="470" fill="#FFFFFF"/>
+  <g font-size="20" fill="#3B3230">
+    <!-- 左：渡すもの -->
+    <rect x="16" y="16" width="290" height="258" rx="6" fill="#FAF7F3" stroke="#4A6478" stroke-width="2"/>
+    <text x="161" y="50" text-anchor="middle" font-weight="700" fill="#35505F">AIに渡すもの</text>
+    <rect x="34" y="68" width="254" height="48" rx="6" fill="#FFFFFF" stroke="#948072"/><text x="161" y="99" text-anchor="middle" font-size="18">口コミの本文</text>
+    <rect x="34" y="126" width="254" height="62" rx="6" fill="#FFFFFF" stroke="#948072"/><text x="161" y="153" text-anchor="middle" font-size="18">事実のメモ</text><text x="161" y="175" text-anchor="middle" font-size="14" fill="#5E524D">起きたことだけを書く</text>
+    <rect x="34" y="198" width="254" height="62" rx="6" fill="#FFFFFF" stroke="#948072"/><text x="161" y="225" text-anchor="middle" font-size="18">お店の返信のルール</text><text x="161" y="247" text-anchor="middle" font-size="14" fill="#5E524D">口調・署名・書かないこと</text>
+    <!-- 右：渡さないもの -->
+    <rect x="334" y="16" width="290" height="258" rx="6" fill="#FAF7F3" stroke="#96594F" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="479" y="50" text-anchor="middle" font-weight="700" fill="#96594F">AIに渡さないもの</text>
+    <g font-size="18" fill="#5E524D">
+      <rect x="352" y="68" width="254" height="44" rx="6" fill="#FFFFFF" stroke="#C9B7AB"/><text x="479" y="97" text-anchor="middle">投稿者の名前</text>
+      <rect x="352" y="120" width="254" height="44" rx="6" fill="#FFFFFF" stroke="#C9B7AB"/><text x="479" y="149" text-anchor="middle">来店した日付</text>
+      <rect x="352" y="172" width="254" height="44" rx="6" fill="#FFFFFF" stroke="#C9B7AB"/><text x="479" y="201" text-anchor="middle">施術のメニュー・回数</text>
+      <rect x="352" y="224" width="254" height="36" rx="6" fill="#FFFFFF" stroke="#C9B7AB"/><text x="479" y="249" text-anchor="middle" font-size="16">お客様の連絡先</text>
+    </g>
+    <!-- 矢印 -->
+    <path d="M161 274v28" stroke="#948072" stroke-width="2.5"/><path d="M153 296l8 10 8-10" fill="none" stroke="#948072" stroke-width="2.5"/>
+    <rect x="16" y="310" width="290" height="52" rx="6" fill="#E9EEF2" stroke="#4A6478"/>
+    <text x="161" y="343" text-anchor="middle" fill="#35505F" font-weight="700">AIが下書きを出す</text>
+    <path d="M161 362v28" stroke="#948072" stroke-width="2.5"/><path d="M153 384l8 10 8-10" fill="none" stroke="#948072" stroke-width="2.5"/>
+    <rect x="16" y="398" width="608" height="58" rx="6" fill="#F5EBE7" stroke="#96594F"/>
+    <text x="320" y="433" text-anchor="middle" fill="#96594F" font-weight="700">事実を確かめて、自分で直して、自分で投稿する</text>
+  </g>
+</svg>

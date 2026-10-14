@@ -1,0 +1,67 @@
+<svg width="640" height="540" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 540" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif">
+  <rect width="640" height="540" fill="#FFFFFF"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5E524D"/>
+    </marker>
+  </defs>
+  <g font-size="17" fill="#3B3230">
+    <!-- 質問1 -->
+    <rect x="16" y="16" width="350" height="70" rx="6" fill="#FAF7F3" stroke="#4A6478" stroke-width="2"/>
+    <text x="32" y="45" font-weight="700" fill="#35505F">質問1</text>
+    <text x="32" y="70">「まとめる」作業か「決める」作業か</text>
+    <!-- 質問2 -->
+    <rect x="16" y="132" width="350" height="70" rx="6" fill="#FAF7F3" stroke="#4A6478" stroke-width="2"/>
+    <text x="32" y="161" font-weight="700" fill="#35505F">質問2</text>
+    <text x="32" y="186">材料がそろっていて、AIに渡してよいか</text>
+    <!-- 質問3 -->
+    <rect x="16" y="248" width="350" height="70" rx="6" fill="#FAF7F3" stroke="#4A6478" stroke-width="2"/>
+    <text x="32" y="277" font-weight="700" fill="#35505F">質問3</text>
+    <text x="32" y="302">間違えても、すぐ直せるか</text>
+    <!-- 質問4 -->
+    <rect x="16" y="364" width="350" height="70" rx="6" fill="#FAF7F3" stroke="#4A6478" stroke-width="2"/>
+    <text x="32" y="393" font-weight="700" fill="#35505F">質問4</text>
+    <text x="32" y="418">毎回ほぼ同じ形の作業か</text>
+
+    <!-- 下向きの矢印 -->
+    <g stroke="#5E524D" stroke-width="2" marker-end="url(#arrow)">
+      <line x1="120" y1="86" x2="120" y2="128"/>
+      <line x1="120" y1="202" x2="120" y2="244"/>
+      <line x1="120" y1="318" x2="120" y2="360"/>
+      <line x1="120" y1="434" x2="120" y2="476"/>
+    </g>
+    <g font-size="14" fill="#5E524D">
+      <text x="134" y="113">まとめる</text>
+      <text x="134" y="229">はい</text>
+      <text x="134" y="345">直せる（社内のメモなど）</text>
+      <text x="134" y="461">はい</text>
+    </g>
+
+    <!-- 右向きの矢印 -->
+    <g stroke="#5E524D" stroke-width="2" marker-end="url(#arrow)">
+      <line x1="366" y1="51" x2="452" y2="51"/>
+      <line x1="366" y1="167" x2="452" y2="167"/>
+      <line x1="366" y1="283" x2="452" y2="283"/>
+      <line x1="366" y1="399" x2="452" y2="399"/>
+    </g>
+    <g font-size="14" fill="#5E524D" text-anchor="middle">
+      <text x="409" y="42">決める</text>
+      <text x="409" y="158">いいえ</text>
+      <text x="409" y="274">直しにくい</text>
+      <text x="409" y="390">いいえ</text>
+    </g>
+
+    <!-- 結果：人がやる -->
+    <rect x="456" y="16" width="168" height="186" rx="6" fill="#FFFFFF" stroke="#96594F" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="540" y="100" text-anchor="middle" font-size="19" font-weight="700" fill="#96594F">人がやる</text>
+    <text x="540" y="126" text-anchor="middle" font-size="13" fill="#5E524D">人が決める・人が話す</text>
+    <!-- 結果：下書きまで任せる -->
+    <rect x="456" y="248" width="168" height="186" rx="6" fill="#FFFFFF" stroke="#948072" stroke-width="2"/>
+    <text x="540" y="324" text-anchor="middle" font-size="19" font-weight="700" fill="#3B3230">下書きまで</text>
+    <text x="540" y="348" text-anchor="middle" font-size="19" font-weight="700" fill="#3B3230">任せる</text>
+    <text x="540" y="374" text-anchor="middle" font-size="13" fill="#5E524D">人が読んでから出す</text>
+    <!-- 結果：任せる -->
+    <rect x="16" y="480" width="350" height="46" rx="6" fill="#FFFFFF" stroke="#4A6478" stroke-width="2"/>
+    <text x="191" y="510" text-anchor="middle" font-size="19" font-weight="700" fill="#35505F">任せる（ときどき人が見る）</text>
+  </g>
+</svg>

@@ -77,7 +77,10 @@ h1,h2,h3,.mincho{font-family:var(--mincho);font-weight:500;line-height:1.5;lette
 .case-label::after{content:"";width:48px;height:1px;background:var(--gold)}
 .intro h1{margin-top:var(--sp-4);font-size:var(--fs-display);line-height:1.5;letter-spacing:.1em}
 .intro .lead{margin:var(--sp-5) 0 0;max-width:40em;color:var(--ink-2)}
-.sample{display:inline-block;margin:var(--sp-5) 0 0;padding:var(--sp-2) var(--sp-4);border:1px solid var(--gold);border-radius:var(--radius);font-size:var(--fs-ui);color:var(--gold-ink);letter-spacing:.08em}
+.cover{position:relative;max-width:920px;margin:var(--sp-7) 16px 0 0}
+.cover::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:1px solid var(--gold);pointer-events:none}
+.cover .frame{position:relative;overflow:hidden;border-radius:var(--radius);background:var(--bg-2)}
+.cover img{display:block;width:100%;height:auto}
 .meta{max-width:920px;margin:var(--sp-7) 0 0;display:grid;grid-template-columns:auto 1fr;font-size:var(--fs-ui);border-top:1px solid var(--line)}
 .meta dt,.meta dd{padding:var(--sp-3) 0;border-bottom:1px solid var(--line)}
 .meta dt{padding-right:var(--sp-6);color:var(--ink-3);white-space:nowrap}
@@ -155,23 +158,23 @@ footer small{font-family:var(--en);font-size:var(--fs-label);letter-spacing:.1em
 <body>
 <header class="site-head">
   <div class="wrap">
-    <a class="logo" href="../index.html#usecases"><svg viewBox="0 0 26 32" aria-hidden="true"><path class="m-arch" d="M1.5 31.5V13.5a11.5 11.5 0 0 1 23 0v18"/><text class="m-a" x="13" y="25.5" text-anchor="middle">A</text></svg>AI Workflow &amp; Content<small>Portfolio</small></a>
+    <a class="logo" href="../index.html#portfolio"><svg viewBox="0 0 26 32" aria-hidden="true"><path class="m-arch" d="M1.5 31.5V13.5a11.5 11.5 0 0 1 23 0v18"/><text class="m-a" x="13" y="25.5" text-anchor="middle">A</text></svg>AI Workflow &amp; Content<small>Portfolio</small></a>
   </div>
 </header>
 
 <main>
   <section class="intro">
     <div class="wrap">
-      <a class="back" href="../index.html#usecases"><span class="arr rev" aria-hidden="true"></span>ポートフォリオへ戻る</a>
-      <p class="case-label">Use case</p>
+      <a class="back" href="../index.html#portfolio"><span class="arr rev" aria-hidden="true"></span>ポートフォリオへ戻る</a>
+      <p class="case-label">Case</p>
       <h1><span class="ph">現場から本部への報告を、</span><span class="ph">手で集計しない</span></h1>
-      <p class="lead">事業所から毎週届く報告を、AIとプログラムで一覧にまとめ、出ていない事業所へのお願いの文まで下書きする使い方です。確かめて送るのは、本部の方です。</p>
-      <p class="sample">実務を想定した使い方の例です。</p>
+      <p class="lead">事業所から毎週届く報告を、AIとプログラムで一覧にまとめ、出ていない事業所へのお願いの文まで下書きする仕組みです。確かめて送るのは、本部の方です。実務を想定して企画から作り、実際に動かして確かめました。</p>
+      <div class="cover"><div class="frame"><img src="../assets/reports_thumb.webp" alt="AIの画面を3つ並べたもの。済んだ作業の一覧と集計の結果、事業所ごとの表、週のまとめ" width="1200" height="750"></div></div>
       <dl class="meta">
-        <dt>型</dt><dd>集めてまとめる</dd>
-        <dt>向いている所</dt><dd>介護・福祉などで、事業所をいくつか運営している法人の本部</dd>
-        <dt>使う道具</dt><dd>AI（例：Claude のプロジェクト機能）／集計のプログラム／表のファイル（事業所の名簿・先週の一覧）</dd>
-        <dt>人がすること</dt><dd>報告を入れる（事業所）・確かめて送る（本部）</dd>
+        <dt>種類</dt><dd>業務の自動化（報告の集計と、お願いの文の下書き）</dd>
+        <dt>担当</dt><dd>企画・設計・開発</dd>
+        <dt>使用技術</dt><dd>AI（例：Claude のプロジェクト機能）／集計のプログラム／表のファイル（事業所の名簿・先週の一覧）</dd>
+        <dt>成果物</dt><dd>AIに覚えさせる決まり・集計のプログラム・表のひな形</dd>
       </dl>
     </div>
   </section>
@@ -330,21 +333,20 @@ footer small{font-family:var(--en);font-size:var(--fs-label);letter-spacing:.1em
 
   <section class="block">
     <div class="wrap">
-      <div class="sec-title"><p class="en"><span class="no">06</span>How to start</p><h2>進め方</h2></div>
+      <div class="sec-title"><p class="en"><span class="no">06</span>Outputs</p><h2>成果物</h2></div>
       <dl class="deliver">
-        <div><dt>1. お聞きする</dt><dd>今の報告を1つ選び、だれが・何で・どう出しているかをお聞きします。</dd></div>
-        <div><dt>2. 1つでお試し</dt><dd>その報告1つだけで仕組みを作り、いつもの流れと並べて動かします。</dd></div>
-        <div><dt>3. 数字で比べる</dt><dd>集計にかかる時間と、出し忘れの数を、入れる前と後で比べます。</dd></div>
-        <div><dt>4. 広げるか決める</dt><dd>効果が見えたら、ほかの報告にも広げます。合わなければ、元のやり方に戻せます。</dd></div>
+        <div><dt>AIに覚えさせる決まり</dt><dd>表の形、数えるところはプログラムに任せること、送らないことなどを書いたものです。全文を、上の「実際に動かした画面」に載せています。</dd></div>
+        <div><dt>集計のプログラム</dt><dd>合計を出す・出ていない事業所を拾う・表の数字が合っているか確かめる、の3つを行います。</dd></div>
+        <div><dt>表のひな形</dt><dd>事業所の名簿と、週ごとの一覧の形です。</dd></div>
       </dl>
     </div>
   </section>
 
-  <div class="wrap foot-back"><a class="back" href="../index.html#usecases"><span class="arr rev" aria-hidden="true"></span>ポートフォリオへ戻る</a></div>
+  <div class="wrap foot-back"><a class="back" href="../index.html#portfolio"><span class="arr rev" aria-hidden="true"></span>ポートフォリオへ戻る</a></div>
 </main>
 <footer>
   <div class="wrap">
-    <a class="logo" href="../index.html#usecases"><svg viewBox="0 0 26 32" aria-hidden="true"><path class="m-arch" d="M1.5 31.5V13.5a11.5 11.5 0 0 1 23 0v18"/><text class="m-a" x="13" y="25.5" text-anchor="middle">A</text></svg>AI Workflow &amp; Content</a>
+    <a class="logo" href="../index.html#portfolio"><svg viewBox="0 0 26 32" aria-hidden="true"><path class="m-arch" d="M1.5 31.5V13.5a11.5 11.5 0 0 1 23 0v18"/><text class="m-a" x="13" y="25.5" text-anchor="middle">A</text></svg>AI Workflow &amp; Content</a>
     <small>© 2026 AI Workflow &amp; Content　All rights reserved.</small>
   </div>
 </footer>

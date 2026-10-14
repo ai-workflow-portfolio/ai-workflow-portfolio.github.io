@@ -138,17 +138,6 @@ section.block{padding-block:var(--sp-section)}
 .work .more:active{opacity:.7}
 @media (max-width:860px){.works{grid-template-columns:minmax(0,1fr);row-gap:var(--sp-8)}}
 
-/* 使い方の例（02 Use cases） */
-section.alt{background:var(--bg-2)}
-.uses{max-width:920px;margin:0;padding:0;list-style:none;border-top:1px solid var(--line-strong)}
-.use{display:flex;flex-direction:column;gap:var(--sp-3);padding:var(--sp-6) 0;border-bottom:1px solid var(--line)}
-.use .kind{font-size:var(--fs-ui);letter-spacing:.1em;color:var(--rose)}
-.use h3{font-size:var(--fs-h3)}
-.use p{margin:0;max-width:40em;color:var(--ink-2)}
-.use .more{align-self:flex-start;display:inline-flex;align-items:center;gap:var(--sp-3);min-height:44px;margin-top:var(--sp-2);color:var(--primary);font-size:var(--fs-ui);font-weight:500;letter-spacing:.14em;border-bottom:1px solid currentColor;transition:color .2s}
-.use .more:hover{color:var(--rose)}
-.use .more:hover .arr{width:36px}
-.use .more:active{opacity:.7}
 
 /* footer */
 footer{background:var(--deep-2);color:var(--on-deep)}
@@ -185,7 +174,7 @@ footer small{font-family:var(--en);font-size:var(--fs-label);letter-spacing:.1em
           <div class="work-body">
             <span class="tag">WEB APP</span>
             <h3><span class="ph">肌の記録と</span><span class="ph">振り返りアプリ</span></h3>
-            <p>肌の調子・スキンケア・睡眠・食事を毎日記録し、どんな日に肌の調子がよかったかをグラフで振り返れるWebアプリです。自分用に企画から開発まで行いました。画面は架空のデータで表示しています。</p>
+            <p>肌の調子・スキンケア・睡眠・食事を毎日記録し、どんな日に肌の調子がよかったかをグラフで振り返れるWebアプリです。自分用に企画から開発まで行いました。</p>
             <dl><dt>使用技術</dt><dd>HTML・CSS・JavaScript／Google Drive 連携（記録の引き継ぎ）</dd><dt>担当</dt><dd>企画・設計・開発・テスト</dd><dt>成果物</dt><dd>Webアプリ一式・使い方の手順書（設計書・動作確認の記録つき）</dd></dl>
             <a class="more" href="cases/skincare.html">事例を見る <span class="arr" aria-hidden="true"></span></a>
           </div>
@@ -195,7 +184,7 @@ footer small{font-family:var(--en);font-size:var(--fs-label);letter-spacing:.1em
           <div class="work-body">
             <span class="tag">WEB APP</span>
             <h3><span class="ph">服とメイクを選ぶ</span><span class="ph">ビューティー</span><span class="ph">アドバイザーアプリ</span></h3>
-            <p>パーソナルカラー・骨格・顔タイプの診断結果を、毎日の服とメイク選びに使うためのWebアプリです。写真を撮って AI に聞くと、似合うかどうかと合わせ方がわかります。自分用に企画から開発まで行いました。画面は架空のデータで表示しています。</p>
+            <p>パーソナルカラー・骨格・顔タイプの診断結果を、毎日の服とメイク選びに使うためのWebアプリです。写真を撮って AI に聞くと、似合うかどうかと合わせ方がわかります。自分用に企画から開発まで行いました。</p>
             <dl><dt>使用技術</dt><dd>HTML・CSS・JavaScript／Claude API（AIの判定）</dd><dt>担当</dt><dd>企画・設計・開発・テスト</dd><dt>成果物</dt><dd>Webアプリ一式・使い方の手順書（設計書つき）</dd></dl>
             <a class="more" href="cases/style-note.html">事例を見る <span class="arr" aria-hidden="true"></span></a>
           </div>
@@ -205,7 +194,7 @@ footer small{font-family:var(--en);font-size:var(--fs-label);letter-spacing:.1em
           <div class="work-body">
             <span class="tag">WEB APP</span>
             <h3><span class="ph">イベント託児の</span><span class="ph">運営管理システム</span></h3>
-            <p>問い合わせ・申込・スタッフの手配・常設託児室のシフト・実績・請求の準備までを、1つの流れで管理する業務Webアプリです。AIは整理と下書き、最終確認と判断は人が行う役割分担にしています。ポートフォリオ用の架空の案件で、画面は架空のデータで表示しています。</p>
+            <p>問い合わせ・申込・スタッフの手配・常設託児室のシフト・実績・請求の準備までを、1つの流れで管理する業務Webアプリです。AIは整理と下書き、最終確認と判断は人が行う役割分担にしています。自主制作の事例です。</p>
             <dl><dt>使用技術</dt><dd>画面: HTML・CSS・JavaScript／サーバー: Java／データベース: PostgreSQL／AI: Claude API</dd><dt>担当</dt><dd>企画・設計・開発</dd><dt>成果物</dt><dd>Webアプリ一式・使い方マニュアル（PDF）（設計書・動作確認の記録つき）</dd></dl>
             <a class="more" href="cases/baby-care.html">事例を見る <span class="arr" aria-hidden="true"></span></a>
           </div>
@@ -215,7 +204,7 @@ footer small{font-family:var(--en);font-size:var(--fs-label);letter-spacing:.1em
           <div class="work-body">
             <span class="tag">WEB APP</span>
             <h3><span class="ph">診断のあとに送る</span><span class="ph">結果シートの</span><span class="ph">作成アプリ</span></h3>
-            <p>パーソナルカラーや骨格などの診断のあと、結果を選ぶだけで、イラスト入りのお客様用の結果シートと送る文の下書きができるWebアプリです。髪型・メイクの色・洋服のコーディネートの絵は、選んだタイプに合わせて自動でできます。シートはスマホで見やすく、PDFにも保存できます。ポートフォリオ用の架空の案件で、画面は架空のデータで表示しています。</p>
+            <p>パーソナルカラーや骨格などの診断のあと、結果を選ぶだけで、イラスト入りのお客様用の結果シートと送る文の下書きができるWebアプリです。髪型・メイクの色・洋服のコーディネートの絵は、選んだタイプに合わせて自動でできます。シートはスマホで見やすく、PDFにも保存できます。自主制作の事例です。</p>
             <dl><dt>使用技術</dt><dd>HTML・CSS・JavaScript</dd><dt>担当</dt><dd>企画・設計・開発・テスト</dd><dt>成果物</dt><dd>Webアプリ一式</dd></dl>
             <a class="more" href="cases/diagnosis-sheet.html">事例を見る <span class="arr" aria-hidden="true"></span></a>
           </div>
@@ -235,7 +224,7 @@ footer small{font-family:var(--en);font-size:var(--fs-label);letter-spacing:.1em
           <div class="work-body">
             <span class="tag">AUTOMATION</span>
             <h3><span class="ph">AIのマネージャーと</span><span class="ph">5つの担当で</span><span class="ph">業務を回す仕組み</span></h3>
-            <p>毎朝・毎晩の決まった時刻に、AIのマネージャーが5つの担当（調べもの・営業・コンテンツ・ブログ・制作）に仕事を振り、結果を1枚のレポートにまとめる仕組みです。公開・送信・削除は人が行います。自分の事業のために企画から作り、運用しています。画面は架空のデータで表示しています。</p>
+            <p>毎朝・毎晩の決まった時刻に、AIのマネージャーが5つの担当（調べもの・営業・コンテンツ・ブログ・制作）に仕事を振り、結果を1枚のレポートにまとめる仕組みです。公開・送信・削除は人が行います。自分の事業のために企画から作り、運用しています。</p>
             <dl><dt>使用技術</dt><dd>Claude Code／Googleカレンダー・Gmail 連携（読む・下書きまで）</dd><dt>担当</dt><dd>企画・設計・運用</dd><dt>成果物</dt><dd>設定一式・運用の決まり（日報とレポートのひな形つき）</dd></dl>
             <a class="more" href="cases/ai-manager.html">事例を見る <span class="arr" aria-hidden="true"></span></a>
           </div>
@@ -250,28 +239,27 @@ footer small{font-family:var(--en);font-size:var(--fs-label);letter-spacing:.1em
             <a class="more" href="cases/reel-factory.html">事例を見る <span class="arr" aria-hidden="true"></span></a>
           </div>
         </article>
+        <article class="work" data-cat="auto">
+          <div class="cover"><div class="frame"><img src="assets/reports_thumb.webp" alt="AIの画面を3つ並べたもの。済んだ作業の一覧と集計の結果、事業所ごとの表、週のまとめ" width="1200" height="750" loading="lazy"></div></div>
+          <div class="work-body">
+            <span class="tag">AUTOMATION</span>
+            <h3><span class="ph">現場から本部への報告を、</span><span class="ph">手で集計しない</span></h3>
+            <p>事業所から毎週届く報告を、AIとプログラムで一覧にまとめ、出ていない事業所へのお願いの文まで下書きする仕組みです。毎週はひと言で頼むだけの形です。実務を想定して企画から作り、実際に動かした画面と、最初に1回だけ書いておく決まりの全文を載せています。</p>
+            <dl><dt>使用技術</dt><dd>AI（例：Claude のプロジェクト機能）／集計のプログラム／表のファイル</dd><dt>担当</dt><dd>企画・設計・開発</dd><dt>成果物</dt><dd>AIに覚えさせる決まり・集計のプログラム・表のひな形</dd></dl>
+            <a class="more" href="cases/reports.html">事例を見る <span class="arr" aria-hidden="true"></span></a>
+          </div>
+        </article>
+        <article class="work" data-cat="auto">
+          <div class="cover"><div class="frame"><img src="assets/petstay_thumb.webp" alt="画面を3つ並べたもの。予約の画像を送って「これ登録して」と頼んだAIの画面、愛犬の情報が入ったカレンダーの予定、夜の報告の下書き" width="1200" height="750" loading="lazy"></div></div>
+          <div class="work-body">
+            <span class="tag">AUTOMATION</span>
+            <h3><span class="ph">預かる前の確かめと、</span><span class="ph">その日の報告を、</span><span class="ph">毎回同じ形にする</span></h3>
+            <p>ペットを預かる仕事で、予約の画像からカレンダーに予定を入れ、カルテにある愛犬の情報を一緒に登録し、夜の報告まで下書きする仕組みです。自分の仕事で使っている仕組みをもとに、サンプルのデータで実際に動かした画面と、AIへの頼み方の全文を載せています。</p>
+            <dl><dt>使用技術</dt><dd>入力フォーム／表計算ソフト（例：Google スプレッドシート）／カレンダー／AI（例：Claude）</dd><dt>担当</dt><dd>企画・設計・運用</dd><dt>成果物</dt><dd>AIに覚えさせる決まり・カルテの表</dd></dl>
+            <a class="more" href="cases/petstay.html">事例を見る <span class="arr" aria-hidden="true"></span></a>
+          </div>
+        </article>
       </div>
-    </div>
-  </section>
-  <section class="block alt" id="usecases">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="sec-title"><p class="en"><span class="no">02</span>Use cases</p><h2><span><span class="ph">業務での</span><span class="ph">AIの使い方の例</span></span></h2></div>
-      </div>
-      <ul class="uses">
-        <li class="use">
-          <span class="kind">集めてまとめる</span>
-          <h3><span class="ph">現場から本部への報告を、</span><span class="ph">手で集計しない</span></h3>
-          <p>事業所から毎週届く報告を、AIとプログラムで一覧にまとめ、出ていない事業所へのお願いの文まで下書きする使い方です。毎週はひと言で頼むだけの形です。実際に動かした画面と、最初に1回だけ書いておく決まりの全文を載せています。</p>
-          <a class="more" href="usecases/reports.html">使い方を見る <span class="arr" aria-hidden="true"></span></a>
-        </li>
-        <li class="use">
-          <span class="kind">下書きする</span>
-          <h3><span class="ph">預かる前の確かめと、</span><span class="ph">その日の報告を、</span><span class="ph">毎回同じ形にする</span></h3>
-          <p>ペットを預かる仕事で、予約の画像からカレンダーに予定を入れ、カルテにある愛犬の情報を一緒に登録し、夜の報告まで下書きする使い方です。自分の仕事で使っている仕組みをもとに、架空のデータで実際に動かした画面と、AIへの頼み方の全文を載せています。</p>
-          <a class="more" href="usecases/petstay.html">使い方を見る <span class="arr" aria-hidden="true"></span></a>
-        </li>
-      </ul>
     </div>
   </section>
 </main>

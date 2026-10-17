@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>社内の提出催促メールをAIで下書きする手順【未提出の一覧から】｜AI Workflow &amp; Content ブログ</title>
+<meta name="description" content="社内の書類や報告の提出を、毎回1人ずつメールで催促している人へ。提出状況の一覧から未提出の人を拾い、AIに人数分の催促メールを下書きしてもらうまでの手順を、指示文（プロンプト）の全文と例文つきで紹介します。">
+<link rel="canonical" href="https://ai-workflow-portfolio.github.io/blog/submission-reminder-email-ai/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="社内の提出催促メールをAIで下書きする手順【未提出の一覧から】｜AI Workflow &amp; Content ブログ">
+<meta property="og:description" content="社内の書類や報告の提出を、毎回1人ずつメールで催促している人へ。提出状況の一覧から未提出の人を拾い、AIに人数分の催促メールを下書きしてもらうまでの手順を、指示文（プロンプト）の全文と例文つきで紹介します。">
+<meta property="og:url" content="https://ai-workflow-portfolio.github.io/blog/submission-reminder-email-ai/">
+<meta property="og:site_name" content="AI Workflow &amp; Content ブログ">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="application/rss+xml" title="AI Workflow &amp; Content ブログ" href="/blog/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/blog/assets/style.css">
+<link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "社内の提出催促メールをAIで下書きする手順【未提出の一覧から】", "description": "社内の書類や報告の提出を、毎回1人ずつメールで催促している人へ。提出状況の一覧から未提出の人を拾い、AIに人数分の催促メールを下書きしてもらうまでの手順を、指示文（プロンプト）の全文と例文つきで紹介します。", "datePublished": "2026-10-17", "dateModified": "2026-10-17", "mainEntityOfPage": "https://ai-workflow-portfolio.github.io/blog/submission-reminder-email-ai/", "author": {"@type": "Organization", "name": "AI Workflow & Content ブログ"}, "publisher": {"@type": "Organization", "name": "AI Workflow & Content ブログ"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="logo" href="https://ai-workflow-portfolio.github.io/"><svg viewBox="0 0 26 32" aria-hidden="true"><path class="m-arch" d="M1.5 31.5V13.5a11.5 11.5 0 0 1 23 0v18"/><text class="m-a" x="13" y="25.5" text-anchor="middle">A</text></svg>AI Workflow &amp; Content</a>
+    <nav class="nav" aria-label="メインメニュー"><a href="https://ai-workflow-portfolio.github.io/portfolio/">ポートフォリオ</a><a class="en-link" href="/blog/" aria-current="true">AI WORK NOTE</a><a href="https://ai-workflow-portfolio.github.io/#process">ご依頼の流れ</a><a href="https://ai-workflow-portfolio.github.io/#faq">よくある質問</a><a class="en-link" href="https://ai-workflow-portfolio.github.io/#about">About</a></nav>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScZSHS8sleV69Lc22ueFMAXiGab1IBIkB20I_p7V7-LK4O5vQ/viewform">お問い合わせ</a>
+  </div>
+</header>
+<a class="side-cta" href="https://docs.google.com/forms/d/e/1FAIpQLScZSHS8sleV69Lc22ueFMAXiGab1IBIkB20I_p7V7-LK4O5vQ/viewform">無料で相談する<small>Contact</small></a>
+<main id="main" class="wrap">
+<article class="article">
+  <nav class="crumbs" aria-label="現在地"><a href="/blog/">ブログ</a><span aria-hidden="true">/</span><a href="/blog/category/contact/">問い合わせと連絡</a></nav>
+  <p class="en-label" aria-hidden="true">Article</p>
+  <h1>社内の提出催促メールをAIで下書きする手順【未提出の一覧から】</h1>
+  <p class="article-meta"><time datetime="2026-10-17">2026年10月17日</time></p>
+  <nav class="toc" aria-label="目次"><p class="toc-head">目次</p><ol><li><a href="#s1">こんな作業に、時間を取られていませんか</a></li><li><a href="#s2">結論：提出の催促は「拾う・下書き・見直し・送る」で減らせます</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">気をつけること</a></li><li><a href="#s5">どれくらい減るか</a></li><li><a href="#s6">まとめ</a></li><li><a href="#s7">参考にしたもの</a></li></ol></nav>
+  <div class="prose">
+<p>社員が数人から数十人の会社で、経費の精算や月の報告、年末の書類などを集める係の人は、締め切りのたびに社内へ提出の催促メールを送っているのではないでしょうか。<br>例文を探せば1通の書き方は見つかりますが、本当に時間がかかるのは「だれがまだ出していないかを確かめて、人数分の文を作る」ところです。</p>
+<p>この記事では、提出状況の一覧から未提出の人を拾い、AIに催促メールの下書きを人数分作ってもらう手順を紹介します。<br>結論から言うと、<strong>「一覧を用意する → 未提出の人を表で拾う → AIに人数分の下書きを出してもらう → 見直して自分で送る」の4段</strong>です。<br>拾うのは表の機能、文を作るのはAI、送るのは自分、と分けるのがポイントです。</p>
+<p>指示文（プロンプト）は、期限の前・当日・過ぎたあとの3つの場面に使える形で、全文を載せています。</p>
+<h2 id="s1">こんな作業に、時間を取られていませんか</h2>
+<p>たとえば、社員30人ほどの会社で、総務と経理を兼ねている人の例です。</p>
+<ul><li>毎月5日までに、各部署から月の報告と経費の精算書を集めている</li><li>締め切りの前日に、受け取ったメールと一覧を見比べて、まだの人を探す</li><li>まだの人が8人いれば、8通のメールを1通ずつ書く。相手が上司か、ほかの部署かで言い方を変える</li><li>締め切りを過ぎた人には、強く書きすぎないように、言葉を何度も選び直す</li></ul>
+<p>1通を書く時間は短くても、「だれに送るか確かめる」「相手ごとに言い方を変える」がまとまると、目安で月に1〜2時間になることもあります。<br>しかも、もう出した人に催促を送ってしまうと、気まずくなります。</p>
+<h2 id="s2">結論：提出の催促は「拾う・下書き・見直し・送る」で減らせます</h2>
+<p>全体の流れは次の4段です。</p>
+<figure><a href="/blog/submission-reminder-email-ai/images/flow-4steps.svg" target="_blank" rel="noopener"><img src="/blog/submission-reminder-email-ai/images/flow-4steps.svg" alt="提出状況の一覧を用意する、表のフィルターで未提出の人だけを拾う、AIに人数分の下書きを出してもらう、見直して自分で送る、の流れ" width="640" height="452" loading="lazy"></a><figcaption>図1：催促メールの流れ。拾うのは表、文はAI、送るのは自分です</figcaption></figure>
+<div class="table"><table><thead><tr><th>段</th><th>やること</th><th>だれがやるか</th><th>かかる時間（目安）</th></tr></thead><tbody><tr><td>1</td><td>提出状況の一覧を用意する（形を決めるのは最初の1回だけ）</td><td>自分</td><td>初回15分、2回目からは更新だけ</td></tr><tr><td>2</td><td>未提出の人だけを、表のフィルター（条件に合う行だけを表示する機能）で拾う</td><td>表の機能</td><td>1〜2分</td></tr><tr><td>3</td><td>未提出の人の分だけ、催促メールの下書きを出してもらう</td><td>AI</td><td>2〜3分</td></tr><tr><td>4</td><td>見直して、自分のメールから送る</td><td>自分</td><td>1通1分ほど</td></tr></tbody></table></div>
+<p>ポイントは2つです。</p>
+<p>ひとつは、<strong>だれが未提出かをAIに判断させないこと</strong>です。<br>受け取ったメールや一覧を読み比べる作業は、表の機能のほうが確実です。</p>
+<p>もうひとつは、<strong>送る直前に、もう一度一覧を見ること</strong>です。<br>下書きを作っているあいだに提出した人に、催促を送らないようにします。</p>
+<h2 id="s3">手順</h2>
+<p>ここでは、エクセルかGoogleスプレッドシート（Googleの表計算のサービス）と、ChatGPT や Claude などの対話型のAI（文章で頼むと文章で答えてくれるAI）を使う例で説明します。</p>
+<h3>ステップ1：提出状況の一覧を用意する</h3>
+<p>まず、提出物ごとに、次のような一覧を1枚作ります。<br>すでに名簿があれば、列を足すだけで使えます。</p>
+<div class="table"><table><thead><tr><th>名前</th><th>部署</th><th>立場</th><th>提出した日</th><th>メモ</th></tr></thead><tbody><tr><td>山田</td><td>営業部</td><td>上司</td><td>10/3</td><td></td></tr><tr><td>佐藤</td><td>営業部</td><td>同じ部署</td><td></td><td></td></tr><tr><td>鈴木</td><td>製造部</td><td>ほかの部署</td><td></td><td>出張中（10/6戻り）</td></tr><tr><td>高橋</td><td>製造部</td><td>ほかの部署</td><td>10/4</td><td></td></tr><tr><td>伊藤</td><td>製造部</td><td>ほかの部署</td><td></td><td></td></tr></tbody></table></div>
+<p>「立場」の列は、催促の言い方を変えるために使います。<br>「上司」「同じ部署」「ほかの部署」くらいの分け方で十分です。<br>「メモ」には、出張や休みなど、催促を待ったほうがよい事情を書いておきます。</p>
+<p>提出を受け取ったら、その場で「提出した日」を入れます。<br>ここをこまめに入れておくことが、この手順でいちばん大事なところです。</p>
+<h3>ステップ2：未提出の人だけを拾う</h3>
+<p>一覧の見出しの行を選び、エクセルなら「データ」の「フィルター」、Googleスプレッドシートなら「データ」の「フィルタを作成」を選びます。<br>「提出した日」の列の▼を押し、エクセルなら「(空白セル)」、Googleスプレッドシートなら「値でフィルタ」の空白の項目だけにチェックを入れると、まだ出していない人だけが残ります。</p>
+<p>残った行のうち、「メモ」に事情が書いてある人は、今回の催促から外すかどうかを自分で決めます。<br>外さない人の「名前」から「メモ」までの列を、次のステップで使います。<br>「提出した日」は空なので、まとめてコピーしてかまいません。</p>
+<h3>ステップ3：人数分の下書きを出してもらう</h3>
+<p>次の指示文をAIに貼り、（　）を埋めます。<br>一覧は、表からコピーしてそのまま貼れます。</p>
+<pre><code>あなたは、社内の事務担当者のメールを手伝うアシスタントです。
+下の「提出のお願いの内容」と「未提出の人の一覧」をもとに、社内向けの提出の催促メールの下書きを、一覧の人数分作ってください。
+
+条件：
+- 1人につき1通、件名と本文を作ってください
+- 件名には、提出物の名前と期限を入れてください（例：【提出のお願い】10月分の経費精算（10/5締切））
+- 今の場面は「（期限の前／期限の当日／期限を過ぎた）」です。場面に合わせて、次のように書いてください
+  ・期限の前：念のためのお知らせとして、短く書く
+  ・期限の当日：今日が期限であることを、はっきり書く
+  ・期限を過ぎた：責めずに、いつまでなら受け取れるかを書く
+- 「立場」に合わせて言い方を変えてください
+  ・上司：用件を短く。前置きを長くしない
+  ・同じ部署：ていねいに、かしこまりすぎない
+  ・ほかの部署：ていねいに。「お忙しいところ恐縮ですが」などのひと言を入れる
+- 相手が忘れていると決めつけないでください。「行き違いでしたら、ご容赦ください」の1文を入れてください
+- 出し方が分からない人のために、問い合わせ先を1文入れてください
+- 下の内容に書かれていないこと（理由、ほかの人の提出状況、罰則など）は、書かないでください
+- 「メモ」に事情が書いてある人は、その事情に配慮した言い方にしてください。ただし、事情の中身は本文に書かないでください
+
+【提出のお願いの内容】
+- 提出物：（例：10月分の経費精算書）
+- 期限：（例：10月5日（月）17時）
+- 期限を過ぎた場合に受け取れる日：（例：10月7日（水）まで）
+- 出し方：（例：経費精算のフォルダに入れる）
+- 問い合わせ先：（例：総務の〇〇まで、内線〇〇）
+- 差出人の名前：（例：総務部　〇〇）
+
+【未提出の人の一覧】
+（名前・部署・立場・メモの列を貼る）</code></pre>
+<p>たとえば、「期限の当日」「ほかの部署」の人に向けた下書きは、次のような形になります。</p>
+<blockquote><p>件名：【提出のお願い】10月分の経費精算書（本日17時締切）<br><br>製造部　伊藤様<br><br>お疲れさまです。総務部の〇〇です。<br>10月分の経費精算書について、本日10月5日（月）17時が提出の期限となっております。<br>お忙しいところ恐縮ですが、経費精算のフォルダへのご提出をお願いいたします。<br>行き違いでしたら、ご容赦ください。<br>出し方で分からないことがあれば、総務の〇〇（内線〇〇）までお知らせください。<br><br>総務部　〇〇</p></blockquote>
+<p>同じ一覧で、場面を「期限を過ぎた」に変えて頼み直せば、次の回の下書きもすぐに出せます。<br>毎月使う場合は、指示文と「提出のお願いの内容」をメモ帳などに保存しておくと、次からは一覧を貼るだけで済みます。</p>
+<h3>ステップ4：見直して、自分で送る</h3>
+<p>下書きを、次の表で見直します。</p>
+<div class="table"><table><thead><tr><th>見るところ</th><th>見る内容</th></tr></thead><tbody><tr><td>宛先</td><td>送る直前に一覧を見直し、提出済みになった人を外したか</td></tr><tr><td>期限・出し方</td><td>日付・曜日・時間・提出先が、お願いの内容と同じか</td></tr><tr><td>事情</td><td>出張や休みなど、メモに書いた事情が本文に出ていないか</td></tr><tr><td>言い方</td><td>上司に長すぎないか。期限を過ぎた人を責める言い方になっていないか</td></tr><tr><td>送り方</td><td>1人ずつ別のメールで送るか。宛名と本文の名前が合っているか</td></tr></tbody></table></div>
+<p>送るのは、自分のメールから行います。<br>人数が多くても、AIに送信までさせる仕組みにはしないほうが安心です。<br>下書きに間違いがあったとき、送る前に止められるのは自分だけだからです。</p>
+<h2 id="s4">気をつけること</h2>
+<h3>AIに渡す情報は、催促に必要なところだけにする</h3>
+<p>AIに貼るのは、名前・部署・立場・メモの列だけにします。<br>メールアドレスや社員番号、経費の金額、評価や体調のことなどは貼りません。<br>「メモ」には、「出張中」「休み」くらいの短い言葉だけを書くようにします。</p>
+<p>会社で使ってよいAIサービスが決まっているときは、そのサービスを使います。<br>決まっていないときは、名前を「Aさん」「Bさん」のような記号に置き換えて貼り、宛名は送る前に自分で入れ直すと安心です。<br>入力した内容を学習に使わない設定があるかは、使っているサービスの公式のヘルプで確かめておきます。</p>
+<p>どの作業をAIに任せ、どこからを人がやるかの考え方は、<a href="/blog/ai-task-delegation-criteria/">AIに任せる仕事の決め方</a>でもまとめています。</p>
+<h3>AIに任せないこと</h3>
+<ul><li><strong>だれが未提出かの判断</strong>：一覧とフィルターで拾います。AIに受け取ったメールを読ませて判断させると、見落としや思い込みが入ります</li><li><strong>催促を待つかどうか</strong>：出張や休みの人に今送るかは、自分で決めます</li><li><strong>期限を延ばすかどうか</strong>：受け取れる日は、自分で決めてから指示文に書きます</li><li><strong>送信</strong>：自分で読んで、自分で送ります</li></ul>
+<h3>何度も催促が要るときは、仕組みのほうを見直す</h3>
+<p>同じ人に毎月何度も催促しているときは、文面より、提出のしかたに原因があることが多いです。<br>たとえば、提出先がメールとフォルダの2か所に分かれている、書き方の見本がない、期限が月によって変わる、などです。<br>催促の回数を減らしたいときは、提出先を1か所にそろえる、期限を毎月同じ日にする、といった決め方のほうが効きます。</p>
+<h2 id="s5">どれくらい減るか</h2>
+<p>目安ですが、30人から提出物を集めて、そのうち8人に催促する場合は、次のくらいになります（測った数字ではありません）。</p>
+<div class="table"><table><thead><tr><th></th><th>手でやる場合</th><th>この手順の場合</th></tr></thead><tbody><tr><td>未提出の人を確かめる</td><td>15〜20分（メールと一覧を見比べる）</td><td>1〜2分（フィルターで拾う）</td></tr><tr><td>8通のメールを書く</td><td>30〜40分</td><td>10〜15分（下書きを出す3分＋見直して送る8分ほど）</td></tr><tr><td>期限を過ぎたあとの2回目の催促</td><td>もう一度、1通ずつ書く</td><td>場面を変えて頼み直すだけ</td></tr></tbody></table></div>
+<p>いちばん減るのは、「だれに送るか確かめる時間」と「相手ごとに言い方を考える時間」です。<br>ただし、提出を受け取ったときに一覧へ日付を入れる手間は、新しく増えます。</p>
+<h2 id="s6">まとめ</h2>
+<ol><li>提出状況の一覧を作り、受け取ったらその場で<strong>提出した日を入れる</strong></li><li>未提出の人は<strong>表のフィルターで拾い</strong>、AIには名前・部署・立場・メモだけを渡して、人数分の下書きを出してもらう</li><li>AIに任せるのは下書きまで。<strong>送る直前に一覧を見直し、自分で送る</strong></li></ol>
+<h2 id="s7">参考にしたもの</h2>
+<ul><li>Microsoft サポート「範囲またはテーブル内のデータをフィルター処理する」 https://support.microsoft.com/ja-jp/office/範囲またはテーブル内のデータをフィルター処理する-01832226-31b5-4568-8806-38c37dcc180e （2026年10月14日に確認）</li><li>Google ドキュメント エディタ ヘルプ「データの並べ替えとフィルタ」 https://support.google.com/docs/answer/3540681?hl=ja （2026年10月14日に確認）</li></ul>
+  </div>
+  <aside class="cta" aria-labelledby="cta-head">
+    <h2 id="cta-head">同じような作業で、お困りではありませんか</h2>
+    <p>いまの仕事の進め方をうかがって、どの作業を仕組みにできるかを一緒に整理します。</p>
+    <a class="btn solid" href="https://docs.google.com/forms/d/e/1FAIpQLScZSHS8sleV69Lc22ueFMAXiGab1IBIkB20I_p7V7-LK4O5vQ/viewform">フォームでお問い合わせ</a>
+  </aside>
+
+</article>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-in">
+    <a class="logo" href="https://ai-workflow-portfolio.github.io/"><svg viewBox="0 0 26 32" aria-hidden="true"><path class="m-arch" d="M1.5 31.5V13.5a11.5 11.5 0 0 1 23 0v18"/><text class="m-a" x="13" y="25.5" text-anchor="middle">A</text></svg>AI Workflow &amp; Content</a>
+    <nav class="foot-nav" aria-label="フッターメニュー"><a href="https://ai-workflow-portfolio.github.io/portfolio/">ポートフォリオ</a><a href="/blog/">AI WORK NOTE</a><a href="https://ai-workflow-portfolio.github.io/#process">ご依頼の流れ</a><a href="https://ai-workflow-portfolio.github.io/#faq">よくある質問</a><a href="https://ai-workflow-portfolio.github.io/#about">About</a><a href="https://docs.google.com/forms/d/e/1FAIpQLScZSHS8sleV69Lc22ueFMAXiGab1IBIkB20I_p7V7-LK4O5vQ/viewform">お問い合わせ</a><a href="/blog/feed.xml" aria-label="RSSフィード">RSS</a></nav>
+    <p class="copy"><small>&copy; 2026 AI Workflow &amp; Content</small></p>
+  </div>
+</footer>
+</body>
+</html>

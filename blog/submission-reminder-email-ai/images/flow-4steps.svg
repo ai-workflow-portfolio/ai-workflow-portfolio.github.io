@@ -1,0 +1,33 @@
+<svg width="640" height="452" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 452" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif">
+  <rect width="640" height="452" fill="#FFFFFF"/>
+  <g font-size="21" fill="#3B3230">
+    <!-- 1 -->
+    <rect x="16" y="16" width="608" height="76" rx="6" fill="#FAF7F3" stroke="#948072"/>
+    <circle cx="58" cy="54" r="20" fill="#8C6F45"/><text x="58" y="62" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="700">1</text>
+    <text x="92" y="50" font-weight="700">提出状況の一覧を用意する</text>
+    <text x="92" y="77" font-size="16" fill="#5E524D">名前・部署・立場・提出した日・メモ。形は最初の1回だけ</text>
+    <rect x="530" y="38" width="76" height="32" rx="16" fill="#F5EBE7" stroke="#96594F"/><text x="568" y="60" text-anchor="middle" font-size="16" fill="#96594F" font-weight="700">自分</text>
+    <path d="M320 92v16" stroke="#948072" stroke-width="2.5"/><path d="M312 102l8 10 8-10" fill="none" stroke="#948072" stroke-width="2.5"/>
+    <!-- 2 -->
+    <rect x="16" y="120" width="608" height="76" rx="6" fill="#FAF7F3" stroke="#948072"/>
+    <circle cx="58" cy="158" r="20" fill="#8C6F45"/><text x="58" y="166" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="700">2</text>
+    <text x="92" y="154" font-weight="700">未提出の人だけを拾う</text>
+    <text x="92" y="181" font-size="16" fill="#5E524D">表のフィルターで「提出した日」が空の行を出す</text>
+    <rect x="530" y="142" width="76" height="32" rx="16" fill="#E9EEF2" stroke="#4A6478"/><text x="568" y="164" text-anchor="middle" font-size="16" fill="#35505F" font-weight="700">表</text>
+    <path d="M320 196v16" stroke="#948072" stroke-width="2.5"/><path d="M312 206l8 10 8-10" fill="none" stroke="#948072" stroke-width="2.5"/>
+    <!-- 3 -->
+    <rect x="16" y="224" width="608" height="76" rx="6" fill="#FAF7F3" stroke="#948072"/>
+    <circle cx="58" cy="262" r="20" fill="#8C6F45"/><text x="58" y="270" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="700">3</text>
+    <text x="92" y="258" font-weight="700">人数分の下書きを出してもらう</text>
+    <text x="92" y="285" font-size="16" fill="#5E524D">期限の前・当日・過ぎたあとで、言い方を変える</text>
+    <rect x="530" y="246" width="76" height="32" rx="16" fill="#E9EEF2" stroke="#4A6478"/><text x="568" y="268" text-anchor="middle" font-size="16" fill="#35505F" font-weight="700">AI</text>
+    <path d="M320 300v16" stroke="#948072" stroke-width="2.5"/><path d="M312 310l8 10 8-10" fill="none" stroke="#948072" stroke-width="2.5"/>
+    <!-- 4 -->
+    <rect x="16" y="328" width="608" height="108" rx="6" fill="#FAF7F3" stroke="#948072"/>
+    <circle cx="58" cy="366" r="20" fill="#8C6F45"/><text x="58" y="374" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="700">4</text>
+    <text x="92" y="362" font-weight="700">見直して、自分で送る</text>
+    <text x="92" y="389" font-size="16" fill="#5E524D">送る直前に、もう一度一覧を見る</text>
+    <text x="92" y="415" font-size="16" fill="#5E524D">（行き違いで出した人に送らないため）</text>
+    <rect x="530" y="350" width="76" height="32" rx="16" fill="#F5EBE7" stroke="#96594F"/><text x="568" y="372" text-anchor="middle" font-size="16" fill="#96594F" font-weight="700">自分</text>
+  </g>
+</svg>
